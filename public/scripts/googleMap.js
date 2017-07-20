@@ -19,7 +19,7 @@ $(() => {
   function addMarkerPopUp(location, map) {
 
     // Create a new marker
-    var marker = new google.maps.Marker({
+    const marker = new google.maps.Marker({
       position: location,
       map: map,
       draggable: true
@@ -44,7 +44,7 @@ $(() => {
     </div>`;
 
     // Initialize new pop-up
-    var popUp = new google.maps.InfoWindow({
+    const popUp = new google.maps.InfoWindow({
       content: popUpContent
     });
 
