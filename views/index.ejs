@@ -29,6 +29,20 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCo_-cda0lVHcldZYsGcAMwCpzUf41whbE&callback=initMap">
     </script>
+    <form action="/categories/:categoryid">
+      <select name="categories">
+        <option value="food">food</option>
+        <option value="bars">bars</option>
+        <option value="worst sushi">worst sushi</option>
+        <option value="Yelim's cafes">Yelim's cafes</option>
+      </select>
+      <input type="submit">
+    </form>
+    <form action="/categories/:categoryid" method="POST">
+      <label for="categories">New category:</label>
+      <input id="categories" type="text" name="categories">
+      <input type="submit" value="create">
+    </form>
   </body>
 
 </html>
