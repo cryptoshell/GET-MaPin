@@ -30,16 +30,17 @@ $(() => {
     <div id="content">
       <form method="POST" action="/tweets/" id="make-tweet">
         <textarea name="text" placeholder="title"></textarea>
-        <input id="submit description" type="submit" value="Add title">
+        <input id="submit description" type="submit" value="Add title" />
       </form>
       <form method="POST" action="/tweets/" id="make-tweet">
         <textarea name="text" placeholder="describe your marker"></textarea>
-        <input id="submit description" type="submit" value="Describe">
+        <input id="submit description" type="submit" value="Describe" />
       </form>
       <form action="upload.php" method="post" enctype="multipart/form-data"> ...
-        <input type="file" name="fileToUpload" id="fileToUpload">
-        <input type="submit" value="Upload Image" name="submit">
-    </form>
+        <input type="file" name="fileToUpload" id="fileToUpload" />
+        <input type="submit" value="Upload Image" name="submit" />
+      </form>
+      <input type="submit" value="Delete pin" />
     </div>`;
 
     // Initialize new pop-up
@@ -53,6 +54,6 @@ $(() => {
     });
   }
 
-  google.maps.event.addDomListener(window, 'load', initialize);
+  initialize();
 
 });
