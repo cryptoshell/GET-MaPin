@@ -28,17 +28,17 @@ $(() => {
     // Set pop-up content
     const popUpContent = `
     <div id="content">
-      <form method="POST" action="/tweets/" id="make-tweet">
-        <textarea name="text" placeholder="title"></textarea>
-        <input id="submit description" type="submit" value="Add title" />
+      <form method="POST" action="/markers" id="marker-title">
+        <textarea name="text" placeholder="eg. my fave spot"></textarea>
+        <input id="submit-title" type="submit" value="Add title" />
       </form>
-      <form method="POST" action="/tweets/" id="make-tweet">
-        <textarea name="text" placeholder="describe your marker"></textarea>
-        <input id="submit description" type="submit" value="Describe" />
+      <form method="POST" action="/markers" id="marker-description">
+        <textarea name="text" placeholder="Description"></textarea>
+        <input id="submit-description" type="submit" value="Describe" />
       </form>
-      <form action="upload.php" method="post" enctype="multipart/form-data"> ...
+      <form action="upload.php" method="POST" enctype="multipart/form-data"> ...
         <input type="file" name="fileToUpload" id="fileToUpload" />
-        <input type="submit" value="Upload Image" name="submit" />
+        <input type="submit" value="Upload Image" name="Submit" />
       </form>
       <input type="submit" value="Delete pin" />
     </div>`;
