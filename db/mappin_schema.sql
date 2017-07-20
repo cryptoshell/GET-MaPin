@@ -1,8 +1,3 @@
-DROP TABLE IF EXISTS "favourite";
-DROP TABLE IF EXISTS "marker";
-DROP TABLE IF EXISTS "category";
-DROP TABLE IF EXISTS "user";
-
 DROP TABLE IF EXISTS "favourites";
 DROP TABLE IF EXISTS "markers";
 DROP TABLE IF EXISTS "categories";
