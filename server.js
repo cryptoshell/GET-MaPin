@@ -18,7 +18,10 @@ const knexLogger  = require('knex-logger');
 const usersRoutes = require("./routes/users");
 const register = require("./routes/register");
 const login = require("./routes/login");
-const index = require("./routes/index")
+const index = require("./routes/index");
+const user = require("./routes/users");
+const edit = require("./routes/edit");
+
 
 
 
@@ -43,17 +46,25 @@ app.use(express.static("public"));
 // Mount all resource routes
 // app.use("/api/users", usersRoutes(knex));
 
-// Register
-app.use(register)
+// Register 
+app.use(register);
 
 // Login
-app.use(login)
+app.use(login);
 
-// Home page
-app.use(index)
+// Index page
+app.use(index);
 // app.get("/", (req, res) => {
 //   res.render("index");
 // });
+
+// User page
+app.use(user);
+
+// Edit
+app.use(edit);
+
+
 
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
