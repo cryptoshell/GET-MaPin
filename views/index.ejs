@@ -16,7 +16,10 @@
   <body>
     <h1>Mappin'</h1>
     <i><h2>Get Mappin'! Map it - Pin it - Share it</h2></i>
-    <div id="mapid"></div>
+
+    <div id="mapid">
+      <input type="hidden" data-map-markers="" value="" name="map-geojson-data" />
+    </div>
     <script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"></script>
     <script type="text/javascript" src="/scripts/leafletMap.js"></script>
   </body>
