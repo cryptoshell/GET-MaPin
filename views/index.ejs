@@ -10,15 +10,20 @@
     <!-- Google map stylesheet -->
     <link rel="stylesheet" href="/styles/googleMap.css" type="text/css" />
 
+    <!-- Navbar stylesheet     -->
+    <link rel="stylesheet" href="/styles/navbar.css" type="text/css" />
+
+
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
   </head>
   
-  <header>
-      <% include partials/_header %>
-  </header>
+  
 
   <body>
+    <nav id="navbar">
+      <% include partials/_header %>
+    </nav>
     <!-- <h1>Mappin'</h1> -->
     <i><h2>Get Mappin'! Map it - Pin it - Share it</h2></i>
     <div id="map"></div>
