@@ -1,5 +1,6 @@
 "use strict";
 
+// this needs to be properly configured
 const PORT        = process.env.PORT || 8080;
 const ENV         = process.env.ENV || "development";
 const express     = require("express");
@@ -9,7 +10,7 @@ const app         = express();
 const router      = express.Router();
 
 
-router.get("/register", (req, res) => {
+app.get("/register", (req, res) => {
  
   res.render("register")
 });
