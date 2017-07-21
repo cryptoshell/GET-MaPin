@@ -1,6 +1,6 @@
 /* The styles below are not correct and needs to be configured */
 
-#nav-bar {
+#navbar {
   min-width: 460px;
   background-color: #00a087;
   font-size: 10pt;
@@ -16,7 +16,7 @@
   z-index: 9999;
 }
 
-#nav-bar .a {
+#navbar .a {
     float: right;
 
 }
