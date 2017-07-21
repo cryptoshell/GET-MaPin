@@ -22,6 +22,7 @@ const registerRoutes = require("./routes/register")(knex);
 const loginRoutes    = require("./routes/login");
 const indexRoutes    = require("./routes/index");
 const editRoutes     = require("./routes/edit");
+// const markerRoutes   = require("./routes/marker")(knex);
 
 
 
@@ -55,7 +56,7 @@ app.use(express.static("public"));
 // app.use("/api/users", usersRoutes(knex));
 
 // Register
-app.use('/register', registerRoutes);
+app.use("/register", registerRoutes);
 
 // Login
 app.use(loginRoutes);
@@ -69,7 +70,7 @@ app.use(usersRoutes);
 // Edit
 app.use(editRoutes);
 
-
+// app.use("/marker", markerRoutes);
 
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);

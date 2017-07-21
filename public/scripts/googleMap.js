@@ -11,7 +11,8 @@ $(() => {
     // This event listener calls addMarker() when the map is clicked.
     google.maps.event.addListener(map, 'click', (event) => {
       addMarkerPopUp(event.latLng, map);
-      alert(event.latLng);
+      // console.log(event.latLng.lat());
+      // console.log(event.latLng.lng());
     });
   }
 
@@ -25,22 +26,24 @@ $(() => {
       draggable: true
     });
 
+    function getDraggedCoord(){
+      let coord =
+        `<input type="hidden" name="lat" value=${marker.getPosition().lat()} />
+        <input type="hidden" name="long" value=${marker.getPosition().lng()} />`
+        console.log(coord);
+      return coord;
+    }
+
     // Set pop-up content
     const popUpContent = `
     <div id="content">
-      <form method="POST" action="/markers" id="marker-title">
-        <textarea name="text" placeholder="eg. my fave spot"></textarea>
-        <input id="submit-title" type="submit" value="Add title" />
+      <form method="POST" action="/marker" id="new-marker">
+        <textarea name="title" placeholder="eg. my fave spot"></textarea>
+        <textarea name="description" placeholder="Description"></textarea>
+        ${google.maps.event.addListener(marker, 'dragend', getDraggedCoord)}
+        <input type="file" name="image" id="fileToUpload" />
+        <input type="submit" value="Submit" name="Submit" />
       </form>
-      <form method="POST" action="/markers" id="marker-description">
-        <textarea name="text" placeholder="Description"></textarea>
-        <input id="submit-description" type="submit" value="Describe" />
-      </form>
-      <form action="upload.php" method="POST" enctype="multipart/form-data"> ...
-        <input type="file" name="fileToUpload" id="fileToUpload" />
-        <input type="submit" value="Upload Image" name="Submit" />
-      </form>
-      <input type="submit" value="Delete pin" />
     </div>`;
 
     // Initialize new pop-up
