@@ -10,27 +10,34 @@
     <!-- Google map stylesheet -->
     <link rel="stylesheet" href="/styles/googleMap.css" type="text/css" />
 
-    <!-- Navbar stylesheet     -->
-    <link rel="stylesheet" href="/styles/navbar.css" type="text/css" />
-
-
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
   </head>
-  
-  
 
   <body>
-    <nav id="navbar">
       <% include partials/_header %>
-    </nav>
-    <!-- <h1>Mappin'</h1> -->
+
+      <!-- <h1>Mappin'</h1> -->
     <i><h2>Get Mappin'! Map it - Pin it - Share it</h2></i>
     <div id="map"></div>
     <script type="text/javascript" src="/scripts/googleMap.js"></script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCo_-cda0lVHcldZYsGcAMwCpzUf41whbE&callback=initMap">
+    <script defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCo_-cda0lVHcldZYsGcAMwCpzUf41whbE">
     </script>
+    <form action="/categories/:categoryid">
+      <select name="categories">
+        <option value="food">food</option>
+        <option value="bars">bars</option>
+        <option value="worst sushi">worst sushi</option>
+        <option value="Yelim's cafes">Yelim's cafes</option>
+      </select>
+      <input type="submit">
+    </form>
+    <form action="/categories/:categoryid" method="POST">
+      <label for="categories">New category:</label>
+      <input id="categories" type="text" name="categories">
+      <input type="submit" value="create">
+    </form>
   </body>
 
 </html>
