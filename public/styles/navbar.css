@@ -2,9 +2,8 @@
 
 #navbar {
   min-width: 460px;
-  background-color: #00a087;
+  background-color: #b3fd62;
   font-size: 10pt;
-  height: 80px;
   left: 0;
   padding-left: 2em;
   padding-right: 2em;
@@ -12,11 +11,27 @@
   padding-top: 0;
   position: fixed;
   top: 0;
+  height: 5em;
   width: 100%;
-  z-index: 9999;
+  z-index: 4;
+}
+h1 {
+  width: 100px;
+  float: left;
+  font-size: 41px;
+  font-weight: 800;
 }
 
-#navbar .a {
-    float: right;
+a {
+  float: right;
+  margin-left: 1em;
+  margin-top: 1em;
+  text-decoration: none;
+}
 
+h2 {
+  float: right;
+  margin-top: 3.5em;
+  font-size: 20px;
+  padding: 10px 250px 0px 24px;
 }
