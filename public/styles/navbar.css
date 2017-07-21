@@ -1,6 +1,8 @@
 /* The styles below are not correct and needs to be configured */
 
 #navbar {
+  margin-top: -13px;
+  font-family: sans-serif;
   min-width: 460px;
   background-color: #b3fd62;
   font-size: 10pt;
@@ -15,11 +17,17 @@
   width: 100%;
   z-index: 4;
 }
+.navbarlinks {
+  margin-right: 3em;
+}
+
 h1 {
+  font-family: sans-serif;
   width: 100px;
   float: left;
   font-size: 38px;
   font-weight: 800;
+  line-height: 0em;
 }
 
 a {
