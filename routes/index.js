@@ -1,10 +1,14 @@
 "use strict";
 
-const express = require('express');
-const router  = express.Router();
+const express = require("express");
+
+function createRouter(knex) {
+  const router  = express.Router();
 
 router.get("/", (req, res) => {
     res.render("index");
 });
+  return router;
+}
 
-module.exports = router;
+module.exports = createRouter;
