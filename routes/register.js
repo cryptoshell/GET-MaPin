@@ -1,19 +1,23 @@
 "use strict";
 
 const express = require("express");
-const router  = express.Router();
 
-module.exports = (knex) => {
+function createRouter(knex) {
+  const router  = express.Router();
 
-  router.get("/register", (req, res) => {
-      res.render("register")
+  router.get("/", (req, res) => {
+    res.render("register", {
+      errors: req.flash('errors'),
+      info: req.flash('info')
+    });
   });
 
-  router.post("/register", (req, res) => {
+  router.post("/", (req, res) => {
+    // Guard function to check bad input
     if (!req.body.email || !req.body.password) {
-      res.send('blank email/pw!');
+      // res.send('blank email/pw!');
       req.flash("errors", "email and password cannot be blank!");
-      res.redirect("/");
+      res.redirect("/register");
       return;
     }
 
@@ -40,8 +44,10 @@ module.exports = (knex) => {
       res.redirect("/");
     }).catch((err) => {
       req.flash('errors', err.message);
-      res.redirect("/");
+      res.redirect("/register");
     });
   });
   return router;
 }
+
+module.exports = createRouter;

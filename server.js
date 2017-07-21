@@ -2,14 +2,14 @@
 
 require('dotenv').config();
 
-const PORT        = process.env.PORT || 8080;
-const ENV         = process.env.ENV || "development";
-const express     = require("express");
-const bodyParser  = require("body-parser");
-const sass        = require("node-sass-middleware");
-const app         = express();
+const PORT          = process.env.PORT || 8080;
+const ENV           = process.env.ENV || "development";
+const express       = require("express");
+const bodyParser    = require("body-parser");
+const sass          = require("node-sass-middleware");
+const app           = express();
 const cookieSession = require("cookie-session");
-const flash = require("connect-flash");
+const flash         = require("connect-flash");
 
 const knexConfig  = require("./knexfile");
 const knex        = require("knex")(knexConfig[ENV]);
@@ -18,12 +18,11 @@ const knexLogger  = require("knex-logger");
 
 // Seperated Routes for each Resource
 const usersRoutes = require("./routes/users");
-const register = require("./routes/register")(knex);
-const login = require("./routes/login");
-const index = require("./routes/index");
-const user = require("./routes/users");
-const edit = require("./routes/edit");
-
+const register    = require("./routes/register")(knex);
+const login       = require("./routes/login");
+const index       = require("./routes/index");
+const user        = require("./routes/users");
+const edit        = require("./routes/edit");
 
 
 
@@ -57,7 +56,7 @@ app.use(express.static("public"));
 // app.use("/api/users", usersRoutes(knex));
 
 // Register
-app.use(register);
+app.use('/register', register);
 
 // Login
 app.use(login);
