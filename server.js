@@ -16,7 +16,7 @@ const knex        = require("knex")(knexConfig[ENV]);
 const morgan      = require("morgan");
 const knexLogger  = require("knex-logger");
 
-// Seperated Routes for each Resource
+// Seperated Routes for each Resource - the pattern below imply returning the same kind of thing, but currently are not
 const usersRoutes    = require("./routes/users");
 const registerRoutes = require("./routes/register")(knex);
 const loginRoutes    = require("./routes/login")(knex);
@@ -54,14 +54,26 @@ app.use(express.static("public"));
 // Mount all resource routes
 // app.use("/api/users", usersRoutes(knex));
 
+// app.use((req, res, next) => {
+//   console.log("using a pointless middleware!");
+//   req.pointless = true;
+//   next()
+// });
+
+
+// app.use((req, res, next) => {
+//   console.log("is request pointless?", req.pointless ? 'yup' : 'no');
+//   next();
+// });
+
+// Index page
+app.use(indexRoutes);
+
 // Register
 app.use('/register', registerRoutes);
 
 // Login
-app.use('/login', loginRoutes);
-
-// Index page
-app.use(indexRoutes);
+app.use(loginRoutes);
 
 // User page
 app.use(usersRoutes);

@@ -5,14 +5,14 @@ const express = require('express');
 function createRouter(knex) {
     const router  = express.Router();
 
-    router.get("/", (req, res) => {
+    router.get("/login", (req, res) => {
         res.render("login", {
             errors: req.flash('errors'),
             info: req.flash('info')
         });
     });
 
-    router.post("/", (req, res) => {
+    router.post("/login", (req, res) => {
         // Guard function to check for bad input
         if (!req.body.email || !req.body.password) {
             // res.send('no input in input fields!');
@@ -35,7 +35,9 @@ function createRouter(knex) {
             }
 
             // If user exists, check for password match
-            const comparePasswords = bcryptjs.compare(req.body.password, user.password_digest)
+            // const comparePasswords = bcryptjs.compare(req.body.password, user.password_digest)
+            const comparePasswords = compare(req.body.password, user.password_digest)
+
 
             return comparePasswords.then((passwordsMatch) => {
                 if (!passwordsMatch) {
@@ -53,14 +55,14 @@ function createRouter(knex) {
             res.redirect("/users");
 
             // If chain is broken by error:
-        }).catch((err) {
+        }).catch((err) => {
             req.flash('errors', err.message);
             res.redirect('/');    
         });
     });
+    return router
 }
-
-
+module.exports = createRouter;
 
 // router.post("/login", (req, res) => {
 //   let password = req.body.password
@@ -81,4 +83,3 @@ function createRouter(knex) {
 //   }
 // });
 
-module.exports = router;
