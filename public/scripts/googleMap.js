@@ -1,7 +1,7 @@
 $(() => {
 
   // Initializes map and centers to lat-long
-  function initialize() {
+  const initMap = () => {
     const location = { lat: 49.2827, lng: -123.1088 };
     const map = new google.maps.Map(document.getElementById('map'), {
       zoom: 14,
@@ -16,7 +16,7 @@ $(() => {
   }
 
   // Adds a marker with a pop-up to the map.
-  function addMarkerPopUp(location, map) {
+  const addMarkerPopUp = (location, map) => {
 
     // Create a new marker
     const marker = new google.maps.Marker({
@@ -54,6 +54,6 @@ $(() => {
     });
   }
 
-  initialize();
+  initMap();
 
 });
