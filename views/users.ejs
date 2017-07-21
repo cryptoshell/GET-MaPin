@@ -4,5 +4,15 @@
   </head>
     <body>
         <% include partials/_header %>
+        <% if (errors.length) { %>
+          <% errors.forEach(error => { %>
+            Error: <%= error %>
+          <% }) %>
+        <% } %>
+        <% if (info.length) { %>
+          <% info.forEach(message => { %>
+            <%= message %>
+          <% }) %>
+        <% } %>
     </body>
 </html>

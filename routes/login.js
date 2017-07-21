@@ -2,17 +2,15 @@
 
 const express = require('express');
 
-function createRouter(knex) {
+
+function createRouter(knex, bcrypt) {
     const router  = express.Router();
 
-    router.get("/login", (req, res) => {
-        res.render("login", {
-            errors: req.flash('errors'),
-            info: req.flash('info')
-        });
+   router.get("/", (req, res) => {
+        res.render("login");
     });
 
-    router.post("/login", (req, res) => {
+   router.post("/", (req, res) => {
         // Guard function to check for bad input
         if (!req.body.email || !req.body.password) {
             // res.send('no input in input fields!');
@@ -21,23 +19,24 @@ function createRouter(knex) {
             return;
         }
         // Check for email match in db
-        const matchProvidedEmail = knex("users")
-            .select('id', 'password_digest')
+        const findUserByEmail = knex('users')
+            .select('id', 'name', 'password')
             .where({email: req.body.email})
             .limit(1);
-        matchProvidedEmail.then((rows) => {
+
+        findUserByEmail.then((rows) => {
             const user = rows[0];
+            // console.log(rows[0]); //undefined
+            // console.log(user); //undefined
             if (!user) {
                 return Promise.reject({
                     type: 409,
-                    message: 'Check your spelling, the credidentials submitted do not have a match in our databse'
+                    message: 'Check your spelling, submitted credentials do not have a match in our database'
                 });
             }
 
-            // If user exists, check for password match
-            // const comparePasswords = bcryptjs.compare(req.body.password, user.password_digest)
-            const comparePasswords = compare(req.body.password, user.password_digest)
-
+           // If user exists, check for password match
+            const comparePasswords = bcrypt.compare(req.body.password, user.password);
 
             return comparePasswords.then((passwordsMatch) => {
                 if (!passwordsMatch) {
@@ -52,34 +51,15 @@ function createRouter(knex) {
             // Log user in
             req.session.user_id = user.id;
             // Redirect to users page
+            req.flash('info', "Logged in successfully!");
             res.redirect("/users");
 
-            // If chain is broken by error:
+           // If chain is broken by error:
         }).catch((err) => {
             req.flash('errors', err.message);
-            res.redirect('/');    
-        });
+            res.redirect('/login');
+       });
     });
     return router
 }
 module.exports = createRouter;
-
-// router.post("/login", (req, res) => {
-//   let password = req.body.password
-//   let email = req.body.email
-//   if (!req.body.password || !req.body.email) {
-//     console.log("403 error");
-//     res.status(403).send('Please input a valid email and password');
-//   } else if (!isEmailTaken(email)) {
-//     console.log("403 error");
-//     res.status(403).send('The input email is not in our database');
-//   } else if (passwordCheck(email, password)) {
-//     let user = passwordCheck(email, password)
-//     req.session.user_ID = userID;
-//     res.redirect("/urls");
-//   } else {
-//     console.log("403 error");
-//     res.status(403).send("The email and password does not seem to match")
-//   }
-// });
-

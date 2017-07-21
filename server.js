@@ -15,20 +15,14 @@ const knexConfig  = require("./knexfile");
 const knex        = require("knex")(knexConfig[ENV]);
 const morgan      = require("morgan");
 const knexLogger  = require("knex-logger");
+const bcrypt      = require("bcryptjs");
 
 // Seperated Routes for each Resource - - wrap routes in factory function. the pattern below imply returning the same kind of thing, but currently are not
 const usersRoutes    = require("./routes/users")(knex);
-const registerRoutes = require("./routes/register")(knex);
-<<<<<<< HEAD
-const loginRoutes    = require("./routes/login");
-const indexRoutes    = require("./routes/index");
-const editRoutes     = require("./routes/edit");
-// const markerRoutes   = require("./routes/marker")(knex);
-=======
-const loginRoutes    = require("./routes/login")(knex);
+const registerRoutes = require("./routes/register")(knex, bcrypt);
+const loginRoutes    = require("./routes/login")(knex, bcrypt);
 const indexRoutes    = require("./routes/index")(knex);
 const editRoutes     = require("./routes/edit")(knex);
->>>>>>> master
 
 
 
@@ -58,20 +52,12 @@ app.use("/styles", sass({
 }));
 app.use(express.static("public"));
 
-// Mount all resource routes
-// app.use("/api/users", usersRoutes(knex));
-
-// app.use((req, res, next) => {
-//   console.log("using a pointless middleware!");
-//   req.pointless = true;
-//   next()
-// });
-
-
-// app.use((req, res, next) => {
-//   console.log("is request pointless?", req.pointless ? 'yup' : 'no');
-//   next();
-// });
+// Middleware for req.flash messages
+app.use((req, res, next) => {
+  res.locals.errors = req.flash('errors');
+  res.locals.info = req.flash('info');
+  next();
+});
 
 // Index page
 app.use(indexRoutes);
@@ -80,7 +66,7 @@ app.use(indexRoutes);
 app.use("/register", registerRoutes);
 
 // Login
-app.use(loginRoutes);
+app.use("/login", loginRoutes);
 
 // User page
 app.use(usersRoutes);

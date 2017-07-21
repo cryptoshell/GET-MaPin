@@ -9,15 +9,15 @@
           Error: <%= error %>
         <% }) %>
       <% } %>
-        <% if (info.length) { %>
-          <% info.forEach(message => { %>
-            <%= message %>
-          <% }) %>
-        <% } %>
+      <% if (info.length) { %>
+        <% info.forEach(message => { %>
+          <%= message %>
+        <% }) %>
+      <% } %>
         <form method="POST" action="/login" >
         <input id="email" type="email" name="email" placeholder="type email...">
         <input id="password" type="password" name="password" placeholder="type password...">
         <button type="submit">Login</button>
-        </form>  
+        </form>
   </body>
 </html>

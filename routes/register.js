@@ -2,14 +2,11 @@
 
 const express = require("express");
 
-function createRouter(knex) {
+function createRouter(knex, bcrypt) {
   const router  = express.Router();
 
   router.get("/", (req, res) => {
-    res.render("register", {
-      errors: req.flash('errors'),
-      info: req.flash('info')
-    });
+    res.render("register");
   });
 
   router.post("/", (req, res) => {
@@ -26,6 +23,7 @@ function createRouter(knex) {
       .where({email: req.body.email})
       .limit(1);
     matchProvidedEmail.then((rows) => {
+      console.log(rows);
       if (rows.length) {
         return Promise.reject({
           type: 409,
@@ -33,15 +31,15 @@ function createRouter(knex) {
         });
       }
       return bcrypt.hash(req.body.password, 10);
-    }).then((passwordDigest) => {
+    }).then((encryptedPassword) => {
       return knex("users").insert({
         name: req.body.name,
         email: req.body.email,
-        password: passwordDigest
+        password: encryptedPassword
       });
     }).then(() => {
       req.flash("info", "account created successfully");
-      res.redirect("/");
+      res.redirect("/register");
     }).catch((err) => {
       req.flash('errors', err.message);
       res.redirect("/register");
