@@ -16,11 +16,10 @@ const knexLogger  = require('knex-logger');
 
 // Seperated Routes for each Resource
 const usersRoutes = require("./routes/users");
-const register = require("./routes/register");
-const login = require("./routes/login");
-const index = require("./routes/index");
-const user = require("./routes/users");
-const edit = require("./routes/edit");
+const registerRoutes = require("./routes/register");
+const loginRoutes = require("./routes/login");
+const indexRoutes = require("./routes/index");
+const editRoutes = require("./routes/edit");
 
 
 
@@ -47,22 +46,19 @@ app.use(express.static("public"));
 // app.use("/api/users", usersRoutes(knex));
 
 // Register 
-app.use(register);
+app.use(registerRoutes);
 
 // Login
-app.use(login);
+app.use(loginRoutes);
 
 // Index page
-app.use(index);
-// app.get("/", (req, res) => {
-//   res.render("index");
-// });
+app.use(indexRoutes);
 
 // User page
-app.use(user);
+app.use(usersRoutes);
 
 // Edit
-app.use(edit);
+app.use(editRoutes);
 
 
 
