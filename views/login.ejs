@@ -3,11 +3,13 @@
   <head></head>
 
    <body>
-     <% include partials/_header %>
-    <form method="POST" action="/login" >
-      <input id="email" type="email" name="email" placeholder="type email...">
-      <input id="password" type="password" name="password" placeholder="type password...">
-      <button type="submit">Login</button>
-    </form>  
+        <nav id="navbar">
+            <% include partials/_header %>
+        </nav>
+        <form method="POST" action="/login" >
+        <input id="email" type="email" name="email" placeholder="type email...">
+        <input id="password" type="password" name="password" placeholder="type password...">
+        <button type="submit">Login</button>
+        </form>  
   </body>
 </html>
