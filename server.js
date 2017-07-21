@@ -16,12 +16,12 @@ const knex        = require("knex")(knexConfig[ENV]);
 const morgan      = require("morgan");
 const knexLogger  = require("knex-logger");
 
-// Seperated Routes for each Resource - the pattern below imply returning the same kind of thing, but currently are not
-const usersRoutes    = require("./routes/users");
+// Seperated Routes for each Resource - - wrap routes in factory function. the pattern below imply returning the same kind of thing, but currently are not
+const usersRoutes    = require("./routes/users")(knex);
 const registerRoutes = require("./routes/register")(knex);
 const loginRoutes    = require("./routes/login")(knex);
-const indexRoutes    = require("./routes/index");
-const editRoutes     = require("./routes/edit");
+const indexRoutes    = require("./routes/index")(knex);
+const editRoutes     = require("./routes/edit")(knex);
 
 
 
