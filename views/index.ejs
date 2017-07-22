@@ -30,8 +30,18 @@
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
 
+<<<<<<< HEAD
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+=======
+    <script>
+    $("#selectcategories").change(function() {
+      let action = $(this).val().serialize();
+      $("#select-form").attr('action',`/categories/${action}` );
+    });
+    </script>
+
+>>>>>>> b8116b4e85bbf21c243e837ccd36aae82d3f8764
   </head>
 
   <body>
@@ -52,16 +62,16 @@
     <script defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCo_-cda0lVHcldZYsGcAMwCpzUf41whbE">
     </script>
-    <form action="/categories/:categoryid">
-      <select name="categories">
-        <%for(let list in lists){ %>
-        <option><%=lists[list]%></option>
+    <form id='select-form' action="" method="GET">
+      <select id='selectcategories' name="categories">
+        <%for(let list in lists){%>
+          <option value="<%=list%>"><%=lists[list]%></option>
         <%}%>
       </select>
       <input type="submit">
     </form>
     <%if(user){%>
-    <form action="/categories" method="POST">
+    <form action="/categories/" method="POST">
       <label for="categories">New category:</label>
       <input id="categories" type="text" name="categories">
       <input type="submit" value="create">
