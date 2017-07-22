@@ -9,8 +9,8 @@ function createRouter(knex) {
     const getAllCategoryMarkers = knex("markers")
     .select()
     .where({categories_id: 1})
-
-  getAllCategoryMarkers.then((rows) => {
+});
+  // getAllCategoryMarkers.then((rows) => {
 
 
   router.post("/", (req, res) => {
@@ -27,7 +27,8 @@ function createRouter(knex) {
       res.send(error);
     });
   });
-
+  return router;
+}
   // router.get("/", (req, res) => {
 
     // knex('markers').select().where('categories_id', 1).then((resultArray) => {
@@ -59,7 +60,5 @@ function createRouter(knex) {
   //       res.sendStatus(500);
   //   });
   // });
-  return router;
-}
 
 module.exports = createRouter;
