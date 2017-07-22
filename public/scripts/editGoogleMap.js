@@ -20,19 +20,22 @@ $(() => {
   const addMarkerPopUp = (location, map) => {
 
     // Create a new marker
+
+    // for each query, render the markers using AJA
     const marker = new google.maps.Marker({
       position: location,
-      map: map,
-      draggable: true
+      map: map
+      // draggable: true
     });
 
-    function getDraggedCoord(){
-      let coord =
-        `<input type="hidden" name="lat" value=${marker.getPosition().lat()} />
-        <input type="hidden" name="long" value=${marker.getPosition().lng()} />`
-        console.log(coord);
-      return coord;
-    }
+    // ${google.maps.event.addListener(marker, 'dragend', getDraggedCoord)
+    // function getDraggedCoord(){
+    //   let coord =
+    //     `<input type="hidden" name="lat" value=${marker.getPosition().lat()} />
+    //     <input type="hidden" name="long" value=${marker.getPosition().lng()} />`
+    //     console.log(coord);
+    //   return coord;
+    // }
 
     // Set pop-up content
    const popUpContent = `
@@ -40,8 +43,9 @@ $(() => {
       <form method="POST" action="/marker" id="new-marker">
         <textarea name="title" placeholder="eg. my fave spot"></textarea>
         <textarea name="description" placeholder="Description"></textarea>
-        ${google.maps.event.addListener(marker, 'dragend', getDraggedCoord)}
-        <input type="submit" value="Submit" name="Submit" />
+         <input type="hidden" name="lat" value=${marker.getPosition().lat()} />
+        <input type="hidden" name="long" value=${marker.getPosition().lng()} />
+        <input type="submit" value="Post" name="Submit" />
       </form>
     </div>`;
 
