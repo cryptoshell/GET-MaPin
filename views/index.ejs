@@ -5,16 +5,26 @@
 
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" /> 
+    <link rel="stylesheet" href="/styles/styles.css" type="text/css" /> 
+
 
     <!-- Navbar stylesheet     -->
-    <link rel="stylesheet" href="/styles/navbar.css" type="text/css" />
+     <link rel="stylesheet" href="/styles/navbar.css" type="text/css" /> 
 
     <!-- Google map stylesheet -->
-    <link rel="stylesheet" href="/styles/googleMap.css" type="text/css" />
+    <!-- <link rel="stylesheet" href="/styles/googleMap.css" type="text/css" /> -->
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
+
+    <script>
+    $("#selectcategories").change(function() {
+      let action = $(this).val().serialize();
+      $("#select-form").attr('action',`/categories/${action}` );
+    });
+    </script>
+
   </head>
   <body>
     <% include partials/_header %>
@@ -35,16 +45,16 @@
     <script defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCo_-cda0lVHcldZYsGcAMwCpzUf41whbE">
     </script>
-    <form action="/categories/:categoryid">
-      <select name="categories">
-        <%for(let list in lists){ %>
-        <option><%=lists[list]%></option>
+    <form id='select-form' action="" method="GET">
+      <select id='selectcategories' name="categories">
+        <%for(let list in lists){%>
+          <option value="<%=list%>"><%=lists[list]%></option>
         <%}%>
       </select>
       <input type="submit">
     </form>
     <%if(user){%>
-    <form action="/categories" method="POST">
+    <form action="/categories/" method="POST">
       <label for="categories">New category:</label>
       <input id="categories" type="text" name="categories">
       <input type="submit" value="create">

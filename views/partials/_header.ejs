@@ -6,22 +6,22 @@
 	<link rel="stylesheet" href="/styles/navbar.css" type="text/css" />
 	<header>
 		<nav id="navbar">
-			<h1>mapPin</h1>
+			<h1><a id="logo" href="/">mapPin</a></h1>
 			 <% if (user) { %>
-					<ul class="navbarlinks">
+					 <ul class="navbarlinkwrap"> 
 						<form method="POST" action="/logout">
 							<input id="logout" type="submit" value="LOGOUT">
 						</form>
-						<a href="/users"> USER </a>
-						<a href="/edit"> EDIT </a>
-						<a href="/"> HOME </a>
-					</ul>
+						<a class="navbarlinks" href="/users"> USER </a>
+						<a class="navbarlinks" href="/edit"> EDIT </a>
+						<a class="navbarlinks" href="/"> HOME </a>	
+					 </ul> 
 				<% } else { %>
-					<ul class="navbarlinks">
-						<a href="/register"> REGISTER </a>
-						<a href="/login"> LOG IN </a>	
-						<a href="/"> HOME </a>
-					</ul>
+					 <ul class="navbarlinkwrap"> 
+						<a class="navbarlinks" href="/register"> REGISTER </a>
+						<a class="navbarlinks" href="/login"> LOG IN </a>
+						<a class="navbarlinks" href="/"> HOME </a>	
+					 </ul> 
 				<% } %>
 		</nav>
 	</header>
