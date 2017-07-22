@@ -8,17 +8,6 @@ $(() => {
       center: location
     });
 
-    // This event listener calls addMarker() when the map is clicked.
-    google.maps.event.addListener(map, 'click', (event) => {
-      addMarkerPopUp(event.latLng, map);
-      // console.log(event.latLng.lat());
-      // console.log(event.latLng.lng());
-    });
-  }
-
-  // Adds a marker with a pop-up to the map.
-  const addMarkerPopUp = (location, map) => {
-
     // Create a new marker
     const marker = new google.maps.Marker({
       position: location,
@@ -28,8 +17,8 @@ $(() => {
     // Set pop-up content
      const popUpContent = `
     <div id="content">
-        <h3>TITLE</h3>
-        <p>Description...</p>
+        <h3>Pizza</h3>
+        <p>Best Pizza!!</p>
     </div>`;
 
     // Initialize new pop-up
