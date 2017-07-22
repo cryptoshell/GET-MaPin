@@ -18,7 +18,6 @@ function createRouter(knex) {
       .then((resultArray) => {
         let listOfMarkers = [];
         resultArray.forEach((row) =>{
-<<<<<<< HEAD
           let eachMarker = {};
           for(let key in row){
             eachMarker[key] = row[key]
@@ -35,25 +34,6 @@ function createRouter(knex) {
       });
     });
   });
-=======
-          listsOfMarkers['id'] = row.id;
-          listsOfMarkers['users'] = row.users_id;
-          listsOfMarkers['categories'] = row.categories_id;
-          listsOfMarkers['lat'] = row.lat;
-          listsOfMarkers['long'] = row.long;
-          listsOfMarkers['title'] = row.title;
-          listsOfMarkers['description'] = row.description;
-        })
-    const templateVars = {
-      lists: listsOfResults,
-      user: req.session.user_id,
-      markers: listsOfMarkers
-    }
-    res.render("index", templateVars);
-    })
-  })
-});
->>>>>>> master
   return router;
 }
 
