@@ -28,7 +28,6 @@ router.get("/", (req, res) => {
       user: req.session.user_id,
       markers: listsOfMarkers
     }
-    console.log(listsOfMarkers);
     res.render("index", templateVars);
     })
   })

@@ -5,9 +5,9 @@ const express = require("express");
 function createRouter(knex) {
   const router  = express.Router();
 
-router.get("/", function (req, res) {
-    res.render("categories")
-});
+// router.get("/", function (req, res) {
+//     res.render("categories")
+// });
 
 router.post("/", function (req, res) {
   const categoriesChecker = knex("categories")
@@ -31,17 +31,13 @@ router.post("/", function (req, res) {
       .where({name: req.body.categories})
       .limit(1)
   }).then((categories) => {
-    let templateVars = {
-      id: categories[0].id,
-      name: categories[0].name,
-      user: req.session.user_id
-    };
-    res.render("categories", templateVars);
+    res.redirect(`/?categories=${categories[0].id}`);
   }).catch((err) => {
     req.flash('errors', err.message);
     res.redirect("/");
   });
 });
+
   return router;
 }
 
