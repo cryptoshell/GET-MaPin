@@ -7,13 +7,15 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "local": "./node_modules/.bin/nodemon",
-    "knex": "./node_modules/.bin/knex"
+    "knex": "./node_modules/.bin/knex",
+    "sass": "./node_modules/node-sass/bin/node-sass sass/styles.scss public/styles.css -w sass/styles.scss"
   },
   "author": "Lighthouse Labs",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.2",
+    "bootstrap": "^3.3.7",
     "connect-flash": "^0.1.1",
     "cookie-session": "^2.0.0-beta.2",
     "dotenv": "^4.0.0",
@@ -25,7 +27,8 @@
     "morgan": "^1.8.2",
     "node-sass-middleware": "^0.11.0",
     "nodemon": "^1.11.0",
-    "pg": "^7.0.1"
+    "pg": "^7.0.1",
+    "sass": "^1.0.0-beta.2"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"

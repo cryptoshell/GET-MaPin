@@ -1,5 +1,3 @@
-/* The styles below are not correct and needs to be configured */
-
 #navbar {
   margin-top: -13px;
   font-family: sans-serif;
@@ -17,6 +15,7 @@
   width: 100%;
   z-index: 4;
 }
+
 .navbarlinks {
   margin-right: 3em;
 }
@@ -31,10 +30,10 @@ h1 {
 }
 
 #logout {
-  background:none!important;
-  color:inherit;
-  border:none; 
-  padding:0!important;
+  background: none !important;
+  color: inherit;
+  border: none;
+  padding: 0 !important;
   font: inherit;
   /*border is optional*/
   cursor: pointer;
