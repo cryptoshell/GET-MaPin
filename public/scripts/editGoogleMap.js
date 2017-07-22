@@ -22,15 +22,30 @@ $(() => {
     // Create a new marker
     const marker = new google.maps.Marker({
       position: location,
-      map: map
+      map: map,
+      draggable: true
     });
 
+    function getDraggedCoord(){
+      let coord =
+        `<input type="hidden" name="lat" value=${marker.getPosition().lat()} />
+        <input type="hidden" name="long" value=${marker.getPosition().lng()} />`
+        console.log(coord);
+      return coord;
+    }
+
     // Set pop-up content
-     const popUpContent = `
+   const popUpContent = `
     <div id="content">
-        <h3>TITLE</h3>
-        <p>Description...</p>
+      <form method="POST" action="/marker" id="new-marker">
+        <textarea name="title" placeholder="eg. my fave spot"></textarea>
+        <textarea name="description" placeholder="Description"></textarea>
+        ${google.maps.event.addListener(marker, 'dragend', getDraggedCoord)}
+        <input type="submit" value="Submit" name="Submit" />
+      </form>
     </div>`;
+
+// input type="file" name="image" id="fileToUpload" />
 
     // Initialize new pop-up
     const popUp = new google.maps.InfoWindow({

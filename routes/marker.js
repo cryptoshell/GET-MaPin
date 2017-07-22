@@ -26,17 +26,3 @@ function createRouter(knex) {
 }
 
 module.exports = createRouter;
-
-
-return knex("users").insert({
-        name: req.body.name,
-        email: req.body.email,
-        password: encryptedPassword
-      });
-    }).then(() => {
-      req.flash("info", "account created successfully");
-      res.redirect("/register");
-    }).catch((err) => {
-      req.flash('errors', err.message);
-      res.redirect("/register");
-    });
