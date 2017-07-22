@@ -1,8 +1,10 @@
+$brand-colour:#b3fd62;
+
 #navbar {
   margin-top: -13px;
   font-family: sans-serif;
   min-width: 460px;
-  background-color: #b3fd62;
+  background-color:$brand-colour;
   font-size: 10pt;
   left: 0;
   padding-left: 2em;

@@ -8,7 +8,8 @@
     "start": "node server.js",
     "local": "./node_modules/.bin/nodemon",
     "knex": "./node_modules/.bin/knex",
-    "sass": "./node_modules/node-sass/bin/node-sass sass/styles.scss public/styles.css -w sass/styles.scss"
+    "sass": "./node_modules/node-sass/bin/node-sass styles/styles.scss public/styles.css -w sass/styles.scss",
+    "compile-sass": "./node_modules/node-sass/bin/node-sass --watch --recursive --output public styles"
   },
   "author": "Lighthouse Labs",
   "license": "ISC",
