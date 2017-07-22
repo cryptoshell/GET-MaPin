@@ -8,30 +8,31 @@ $(() => {
       center: location
     });
 
-    // Create a new marker
-    const marker = new google.maps.Marker({
-      position: location,
-      map: map
-    });
-
     // Set pop-up content
-     const popUpContent = `
-    <div id="content">
-        <h3>Pizza</h3>
-        <p>Best Pizza!!</p>
-    </div>`;
+    for(let marker in markers){
+      var popUpContent = `
+      <div id="${marker.id}">
+          <h3>${marker.title}</h3>
+          <p>${marker.description}</p>
+          <p>category: ${marker.categories_id}</p>
+      </div>`;
 
-    // Initialize new pop-up
-    const popUp = new google.maps.InfoWindow({
-      content: popUpContent
-    });
+      // Initialize new pop-up
+      const popUp = new google.maps.InfoWindow({
+        content: popUpContent
+      });
 
-    // Click on marker for pop-up
-    google.maps.event.addListener(marker, 'click', (event) => {
-      popUp.open(map, marker);
-    });
+      // Create a new marker
+      const pin = new google.maps.Marker({
+        position: { lat: marker.lat, lng: marker.long },
+        map: map,
+        title: marker.title
+      });
+
+      marker.addListener('click', function() {
+        infowindow.open(map, marker);
+      });
+    }
   }
-
   initMap();
-
 });
