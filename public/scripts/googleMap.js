@@ -8,42 +8,17 @@ $(() => {
       center: location
     });
 
-    // This event listener calls addMarker() when the map is clicked.
-    google.maps.event.addListener(map, 'click', (event) => {
-      addMarkerPopUp(event.latLng, map);
-      // console.log(event.latLng.lat());
-      // console.log(event.latLng.lng());
-    });
-  }
-
-  // Adds a marker with a pop-up to the map.
-  const addMarkerPopUp = (location, map) => {
-
     // Create a new marker
     const marker = new google.maps.Marker({
       position: location,
-      map: map,
-      draggable: true
+      map: map
     });
 
-    function getDraggedCoord(){
-      let coord =
-        `<input type="hidden" name="lat" value=${marker.getPosition().lat()} />
-        <input type="hidden" name="long" value=${marker.getPosition().lng()} />`
-        console.log(coord);
-      return coord;
-    }
-
     // Set pop-up content
-    const popUpContent = `
+     const popUpContent = `
     <div id="content">
-      <form method="POST" action="/marker" id="new-marker">
-        <textarea name="title" placeholder="eg. my fave spot"></textarea>
-        <textarea name="description" placeholder="Description"></textarea>
-        ${google.maps.event.addListener(marker, 'dragend', getDraggedCoord)}
-        <input type="file" name="image" id="fileToUpload" />
-        <input type="submit" value="Submit" name="Submit" />
-      </form>
+        <h3>Pizza</h3>
+        <p>Best Pizza!!</p>
     </div>`;
 
     // Initialize new pop-up

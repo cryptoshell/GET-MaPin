@@ -18,15 +18,14 @@ const knexLogger  = require("knex-logger");
 const bcrypt      = require("bcryptjs");
 
 // Seperated Routes for each Resource - - wrap routes in factory function. the pattern below imply returning the same kind of thing, but currently are not
-const usersRoutes    = require("./routes/users")(knex);
-const registerRoutes = require("./routes/register")(knex, bcrypt);
-const loginRoutes    = require("./routes/login")(knex, bcrypt);
-const indexRoutes    = require("./routes/index")(knex);
-const editRoutes     = require("./routes/edit")(knex);
+const usersRoutes       = require("./routes/users")(knex);
+const registerRoutes    = require("./routes/register")(knex, bcrypt);
+const loginRoutes       = require("./routes/login")(knex, bcrypt);
+const indexRoutes       = require("./routes/index")(knex);
+const editRoutes        = require("./routes/edit")(knex);
 const categoriesRoutes  = require("./routes/categories")(knex);
-const logoutRoutes   = require("./routes/logout")(knex);
-
-
+const logoutRoutes      = require("./routes/logout")(knex);
+const markerRoutes      = require("./routes/marker")(knex);
 
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
@@ -65,24 +64,26 @@ app.use((req, res, next) => {
 // Index page
 app.use(indexRoutes);
 
-// Register
+// Register page
 app.use("/register", registerRoutes);
 
-// Login
+// Login page
 app.use("/login", loginRoutes);
 
 // Logout
 app.use(logoutRoutes);
 
-// User page
+// User page page
 app.use(usersRoutes);
 
-// Edit
+// Edit page
 app.use(editRoutes);
 
-//categories
+// Categories page
 app.use("/categories", categoriesRoutes);
-// app.use("/marker", markerRoutes);
+
+// Marker
+app.use("/marker", markerRoutes);
 
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
