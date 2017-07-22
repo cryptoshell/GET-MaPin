@@ -41,10 +41,12 @@ $(() => {
         <textarea name="title" placeholder="eg. my fave spot"></textarea>
         <textarea name="description" placeholder="Description"></textarea>
         ${google.maps.event.addListener(marker, 'dragend', getDraggedCoord)}
-        <input type="file" name="image" id="fileToUpload" />
         <input type="submit" value="Submit" name="Submit" />
       </form>
     </div>`;
+
+    console.log(popUpContent);
+// input type="file" name="image" id="fileToUpload" />
 
     // Initialize new pop-up
     const popUp = new google.maps.InfoWindow({

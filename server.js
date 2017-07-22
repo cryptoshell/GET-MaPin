@@ -23,6 +23,7 @@ const registerRoutes = require("./routes/register")(knex, bcrypt);
 const loginRoutes    = require("./routes/login")(knex, bcrypt);
 const indexRoutes    = require("./routes/index")(knex);
 const editRoutes     = require("./routes/edit")(knex);
+const markerRoutes   = require("./routes/marker")(knex);
 
 
 
@@ -74,7 +75,7 @@ app.use(usersRoutes);
 // Edit
 app.use(editRoutes);
 
-// app.use("/marker", markerRoutes);
+app.use("/marker", markerRoutes);
 
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
