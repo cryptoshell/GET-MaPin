@@ -6,7 +6,8 @@ function createRouter(knex) {
   const router  = express.Router();
 
   router.get("/users", (req, res) => {
-      res.render("users");
+    let templateVars = {user: req.session.user_id};
+    res.render("users", templateVars);
   });
   return router;
 }

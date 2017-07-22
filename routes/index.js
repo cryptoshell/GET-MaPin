@@ -5,6 +5,7 @@ const express = require("express");
 function createRouter(knex) {
   const router  = express.Router();
 
+<<<<<<< HEAD
 router.get("/", (req, res) => {
   knex('categories').select('id','name').then((resultArray) => {
     let listsOfResults = {};
@@ -17,6 +18,12 @@ router.get("/", (req, res) => {
     res.render("index", tempVar);
   })
 });
+=======
+  router.get("/", (req, res) => {
+    let templateVars = {user: req.session.user_id};
+      res.render("index", templateVars);
+  });
+>>>>>>> master
   return router;
 }
 
