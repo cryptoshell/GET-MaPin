@@ -41,7 +41,6 @@
     </script>
 
   </head>
-
   <body>
     <% include partials/_header %>
     <% if (errors.length) { %>
@@ -56,6 +55,7 @@
     <% } %>
     <h2>Get Mappin'! Map it - Pin it - Share it</h2>
     <div id="map"></div>
+    <% console.log(markers) %>
     <script type="text/javascript" src="/scripts/googleMap.js"></script>
     <script defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCo_-cda0lVHcldZYsGcAMwCpzUf41whbE">
