@@ -31,11 +31,12 @@ router.post("/", function (req, res) {
       .where({name: req.body.categories})
       .limit(1)
   }).then((categories) => {
-    let tempVar = {
+    let templateVars = {
       id: categories[0].id,
-      name: categories[0].name
+      name: categories[0].name,
+      user: req.session.user_id
     };
-    res.render("categories", tempVar);
+    res.render("categories", templateVars);
   }).catch((err) => {
     req.flash('errors', err.message);
     res.redirect("/");

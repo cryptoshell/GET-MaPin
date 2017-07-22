@@ -23,12 +23,9 @@ const registerRoutes = require("./routes/register")(knex, bcrypt);
 const loginRoutes    = require("./routes/login")(knex, bcrypt);
 const indexRoutes    = require("./routes/index")(knex);
 const editRoutes     = require("./routes/edit")(knex);
-<<<<<<< HEAD
 const categoriesRoutes  = require("./routes/categories")(knex);
-=======
 const logoutRoutes   = require("./routes/logout")(knex);
 
->>>>>>> master
 
 
 

@@ -43,12 +43,13 @@
       </select>
       <input type="submit">
     </form>
-
+    <%if(user){%>
     <form action="/categories" method="POST">
       <label for="categories">New category:</label>
       <input id="categories" type="text" name="categories">
       <input type="submit" value="create">
     </form>
+    <%}%>
   </body>
 
 </html>

@@ -5,25 +5,21 @@ const express = require("express");
 function createRouter(knex) {
   const router  = express.Router();
 
-<<<<<<< HEAD
 router.get("/", (req, res) => {
   knex('categories').select('id','name').then((resultArray) => {
     let listsOfResults = {};
     resultArray.forEach((row) =>{
       listsOfResults[row.id] = row.name;
     })
-    const tempVar = {lists: listsOfResults}
-    console.log(tempVar)
+    const templateVars = {
+      lists: listsOfResults,
+      user: req.session.user_id
+    }
+    console.log(templateVars)
 
-    res.render("index", tempVar);
+    res.render("index", templateVars);
   })
 });
-=======
-  router.get("/", (req, res) => {
-    let templateVars = {user: req.session.user_id};
-      res.render("index", templateVars);
-  });
->>>>>>> master
   return router;
 }
 
