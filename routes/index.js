@@ -15,8 +15,6 @@ router.get("/", (req, res) => {
       lists: listsOfResults,
       user: req.session.user_id
     }
-    console.log(templateVars)
-
     res.render("index", templateVars);
   })
 });
