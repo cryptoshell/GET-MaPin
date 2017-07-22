@@ -23,6 +23,7 @@ const registerRoutes = require("./routes/register")(knex, bcrypt);
 const loginRoutes    = require("./routes/login")(knex, bcrypt);
 const indexRoutes    = require("./routes/index")(knex);
 const editRoutes     = require("./routes/edit")(knex);
+const categoriesRoutes  = require("./routes/categories")(knex);
 
 
 
@@ -74,6 +75,8 @@ app.use(usersRoutes);
 // Edit
 app.use(editRoutes);
 
+//categories
+app.use("/categories", categoriesRoutes);
 // app.use("/marker", markerRoutes);
 
 app.listen(PORT, () => {
