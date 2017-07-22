@@ -23,8 +23,8 @@ const registerRoutes = require("./routes/register")(knex, bcrypt);
 const loginRoutes    = require("./routes/login")(knex, bcrypt);
 const indexRoutes    = require("./routes/index")(knex);
 const editRoutes     = require("./routes/edit")(knex);
+const logoutRoutes   = require("./routes/logout")(knex);
 const markerRoutes   = require("./routes/marker")(knex);
-
 
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
@@ -68,6 +68,9 @@ app.use("/register", registerRoutes);
 
 // Login
 app.use("/login", loginRoutes);
+
+// Logout
+app.use(logoutRoutes);
 
 // User page
 app.use(usersRoutes);

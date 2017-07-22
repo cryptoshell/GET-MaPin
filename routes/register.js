@@ -6,7 +6,8 @@ function createRouter(knex, bcrypt) {
   const router  = express.Router();
 
   router.get("/", (req, res) => {
-    res.render("register");
+    let templateVars = {user: req.session.user_id};
+    res.render("register", templateVars);
   });
 
   router.post("/", (req, res) => {
@@ -38,8 +39,14 @@ function createRouter(knex, bcrypt) {
         password: encryptedPassword
       });
     }).then(() => {
-      req.flash("info", "account created successfully");
-      res.redirect("/register");
+      return knex("users")
+      .select("id")
+      .where({email: req.body.email})
+      .limit(1);
+    }).then((rows) => {
+      req.session.user_id = rows[0].id;
+      // req.flash("info", "account created successfully");
+      res.redirect("/");
     }).catch((err) => {
       req.flash('errors', err.message);
       res.redirect("/register");
