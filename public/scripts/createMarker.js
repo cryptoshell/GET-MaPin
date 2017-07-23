@@ -74,7 +74,7 @@ $(() => {
         <input type="hidden" name="lat" value=${marker.getPosition().lat()} />
         <input type="hidden" name="long" value=${marker.getPosition().lng()} />
         <input type="hidden" name="category" value=${window.location.search || ''} />
-        <input type="submit" value="Post" name="Submit" />
+        <input type="submit" value="Save pin" name="Submit" />
       </form>
       <form method="POST" action="/deletemarker" id="delete-marker">
         <input type="hidden" name="lat" value=${marker.getPosition().lat()} />
