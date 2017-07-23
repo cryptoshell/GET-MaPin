@@ -53,6 +53,11 @@
     <form method="POST" action="/favourites" >
       <input id="favourite" type="submit" value="Favourite" />
     </form>
+    <%for(let list in lists){%>
+      <%if(list === category){%>
+        <h3><%=lists[list]%></h3>
+      <%}%>
+    <%}%>
     <div id="map"></div>
     <script type="text/javascript" src="/scripts/createMarker.js"></script>
     <script defer
