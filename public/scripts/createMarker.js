@@ -40,6 +40,7 @@ $(() => {
 
     });
 
+
     // This event listener calls addMarker() when the map is clicked.
     google.maps.event.addListener(map, 'click', (event) => {
       addMarkerPopUp(event.latLng, map);
@@ -63,7 +64,7 @@ $(() => {
       <form method="POST" action="/marker" id="new-marker">
         <textarea name="title" placeholder="eg. my fave spot"></textarea>
         <textarea name="description" placeholder="Description"></textarea>
-         <input type="hidden" name="lat" value=${marker.getPosition().lat()} />
+        <input type="hidden" name="lat" value=${marker.getPosition().lat()} />
         <input type="hidden" name="long" value=${marker.getPosition().lng()} />
         <input type="hidden" name="category" value=${window.location.search || ''} />
         <input type="submit" value="Post" name="Submit" />
@@ -81,5 +82,4 @@ $(() => {
     });
   }
   initMap();
-
 });
