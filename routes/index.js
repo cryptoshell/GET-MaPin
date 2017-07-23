@@ -13,7 +13,8 @@ function createRouter(knex) {
       });
       const templateVars = {
         lists: listsOfResults,
-        user: req.session.user_id
+        user: req.session.user_id,
+        category: req.query.categories || ''
       };
       res.render("index", templateVars);
     });
