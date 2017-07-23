@@ -2,9 +2,9 @@ $(() => {
 
   // Initializes map and centers to lat-long
   const initMap = () => {
-    const location = { lat: 49.2827, lng: -123.1088 };
+    const location = { lat: 49.2827, lng: -123.098 };
     const map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 14,
+      zoom: 12,
       center: location
     });
 
