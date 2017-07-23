@@ -40,11 +40,11 @@
     <% } %>
     <h2>Get Mappin'! Map it - Pin it - Share it</h2>
     <div id="map"></div>
-<!--     <script type="text/javascript" src="/scripts/renderMarker.js"></script> -->
     <script type="text/javascript" src="/scripts/createMarker.js"></script>
     <script defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCo_-cda0lVHcldZYsGcAMwCpzUf41whbE">
     </script>
+
     <form id='select-form' action="" method="GET">
       <select id='selectcategories' name="categories">
         <%for(let list in lists){%>
@@ -53,6 +53,7 @@
       </select>
       <input type="submit">
     </form>
+
     <%if(user){%>
     <form action="/categories/" method="POST">
       <label for="categories">New category:</label>
