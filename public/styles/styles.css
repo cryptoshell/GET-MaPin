@@ -8,6 +8,10 @@ body {
   border-color: #e7e7e7;
 }
 
+#favourite {
+  float: right;
+}
+
 ul.nav.navbar-nav {
   width: 20em;
   float: right;

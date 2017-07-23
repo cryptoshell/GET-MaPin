@@ -4,36 +4,17 @@ const express = require("express");
 
 function createRouter(knex) {
   const router  = express.Router();
-
-// router.get("/", function (req, res) {
-//     res.render("categories")
-// });
-
-router.post("/", (req, res) => {
   
-  categoriesChecker.then((rows) => {
-    if (rows.length){
-      return Promise.reject({
-        type: 409,
-        message: `${req.body.categories} WUT already exists`
-      });
-    }
-    return knex('favourites').insert({
-      name: req.body.favourites
+  router.post("/", (req, res) => {
+    knex("favourites").insert({
+      users_id: req.session.user_id,
+      categories_id: req.body.favourite
+    }).then((favourites) => {
+      res.redirect(`/?categories=${req.body.favourite}`);
+    }).catch((error) => {
+      res.sendStatus(500);
     });
-  }).then(() => {
-    return knex("categories")
-      .select('id','name')
-      .where({name: req.body.categories})
-      .limit(1)
-  }).then((favourites) => {
-    res.redirect(`/?categories=${categories[0].id}`);
-  }).catch((err) => {
-    req.flash('errors', err.message);
-    res.redirect("/");
   });
-});
-
   return router;
 }
 
