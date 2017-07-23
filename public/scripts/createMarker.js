@@ -23,10 +23,8 @@ $(() => {
 
         var popUpContent = `
         <div id="${markers[marker].id}">
-            <p>${markers[marker].id}</p>
             <h3>${markers[marker].title}</h3>
             <p>${markers[marker].description}</p>
-            <p>category: ${markers[marker].categories_id}</p>
             <form method="POST" action="/deletemarker" id="delete-marker">
               <input type="hidden" name="lat" value=${markers[marker].lat} />
               <input type="hidden" name="category" value=${markers[marker].categories_id} />

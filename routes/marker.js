@@ -49,16 +49,18 @@ router.get("/marker", (req, res) => {
   });
 
   router.post("/deletemarker", (req, res) => {
-    if (req.body.id) {
-      knex("markers").where('id', req.body.id).del()
-      .then((marker) => {
-        req.flash("info", "Marker deleted!");
-        res.redirect(`/?categories=${req.body.category}`);
-      }).catch((error) => {
-        res.sendStatus(500);
-      });
-    } else {
-      res.redirect(`/${req.body.category}`);
+    if(req.session.user_id) {
+      if (req.body.id) {
+        knex("markers").where('id', req.body.id).del()
+        .then((marker) => {
+          req.flash("info", "Marker deleted!");
+          res.redirect(`/?categories=${req.body.category}`);
+        }).catch((error) => {
+          res.sendStatus(500);
+        });
+      } else {
+        res.redirect(`/${req.body.category}`);
+      }
     }
   });
   return router;
