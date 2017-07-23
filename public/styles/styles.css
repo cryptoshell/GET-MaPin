@@ -14,6 +14,23 @@ ul.nav.navbar-nav {
   margin-left: 1em;
   margin-top: 1em;
   text-decoration: none;
+  background-color: transparent;
+}
+
+div.container {
+  margin-right: 3em;
+  float: right;
+  width: 10px;
+}
+
+a#navlinks {
+  color: black, .7;
+}
+
+#navlinks:hover {
+  text-decoration: none !important;
+  background-color: transparent;
+  color: black;
 }
 
 a#logo.navbar-brand {
