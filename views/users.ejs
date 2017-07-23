@@ -3,6 +3,12 @@
   <head>
   </head>
     <body>
+      <h1>
+        Welcome to your page 
+        <% if(user) { %>
+          <h2><%=name%><h2>
+        <%}%>
+      </h1>
         <% include partials/_header %>
         <% if (errors.length) { %>
           <% errors.forEach(error => { %>
