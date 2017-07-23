@@ -8,11 +8,9 @@ function createRouter(knex) {
   router.post("/", (req, res) => {
     knex("favourites").insert({
       users_id: req.session.user_id,
-      categories_id: req.body.category.slice(12)
-    }, 'id').then((favourites) => {
-      console.log(favourites)
-      res.redirect(`/${req.body.category}`);
-      
+      categories_id: req.body.favourite
+    }).then((favourites) => {
+      res.redirect(`/?categories=${req.body.favourite}`);
     }).catch((error) => {
       res.sendStatus(500);
     });

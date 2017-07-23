@@ -51,7 +51,8 @@
     <% } %>
     <h2>Get Mappin'! Map it - Pin it - Share it</h2>
     <form method="POST" action="/favourites" >
-      <input id="favourite" type="submit" value="Favourite" />
+      <input name= "favourite" id="favourite" type="hidden" value="<%=category%>" />
+      <button type="submit">favourite</button>
     </form>
     <%for(let list in lists){%>
       <%if(list === category){%>
