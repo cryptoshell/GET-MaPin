@@ -25,7 +25,7 @@ router.post("/", function (req, res) {
     return knex('categories').insert({
       name: req.body.categories
     });
-  }).then(() =>{
+  }).then(() => {
     return knex("categories")
       .select('id','name')
       .where({name: req.body.categories})
