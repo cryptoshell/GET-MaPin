@@ -32,7 +32,7 @@ function createRouter(knex, bcrypt) {
 			if (!user) {
 				return Promise.reject({
 					type: 409,
-					message: 'Check your spelling, submitted credentials do not have a match in our database'
+					message: 'Check your spelling, submitted credentials are invalid!'
 				});
 			}
 
