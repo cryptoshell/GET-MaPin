@@ -25,6 +25,8 @@ const indexRoutes       = require("./routes/index")(knex);
 const categoriesRoutes  = require("./routes/categories")(knex);
 const logoutRoutes      = require("./routes/logout")(knex);
 const markerRoutes      = require("./routes/marker")(knex);
+const favouritesRoutes  = require("./routes/favourites")(knex);
+
 
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
@@ -77,6 +79,9 @@ app.use(usersRoutes);
 
 // Categories page
 app.use("/categories", categoriesRoutes);
+
+// Favourites page
+app.use("/favourites", favouritesRoutes);
 
 // Marker
 app.use("/marker", markerRoutes);
