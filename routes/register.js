@@ -45,7 +45,7 @@ function createRouter(knex, bcrypt) {
       .limit(1);
     }).then((rows) => {
       req.session.user_id = rows[0].id;
-      // req.flash("info", "account created successfully");
+      req.flash("info", "Account created successfully");
       res.redirect("/");
     }).catch((err) => {
       req.flash('errors', err.message);
