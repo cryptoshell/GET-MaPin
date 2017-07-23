@@ -79,7 +79,7 @@ app.use(usersRoutes);
 app.use("/categories", categoriesRoutes);
 
 // Marker
-app.use("/marker", markerRoutes);
+app.use(markerRoutes);
 
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
