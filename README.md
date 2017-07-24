@@ -17,7 +17,7 @@ If you are not yet a registered user, click 'register' in the top right corner a
 
 ![register page](https://github.com/cryptoshell/WikiMap/blob/master/mapin3.PNG)
 
-Once you are registered og logged in you will be taken to the index page where you will be able to add and edit pins by clicking on the map:
+Once you are registered or logged in you will be taken to the index page where you will be able to add and edit pins by clicking on the map:
 
 ![index](https://github.com/cryptoshell/WikiMap/blob/master/mapin4.PNG)
 
