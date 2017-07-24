@@ -5,7 +5,7 @@ Template 2088 Big City
 http://www.tooplate.com/view/2088-big-city
 
 */
-body {	
+body {
 	background: #1A2D4B;
 	position: relative;
 	color: black;
@@ -25,7 +25,7 @@ body {
 }
 
 /* https://codepen.io/dudleystorey/pen/knqyK */
-.cd-bg-video-wrapper video { 
+.cd-bg-video-wrapper video {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -75,8 +75,8 @@ a:focus {
 	height: 50px;
 }
 
-.cd-slider-nav nav { 
-	width: 100%; 
+.cd-slider-nav nav {
+	width: 100%;
 	padding: 0 10px;
 }
 
@@ -86,10 +86,10 @@ a:focus {
 	vertical-align: top;
 }
 
-.cd-slider-nav li { 
+.cd-slider-nav li {
 	display: block;
 	float: none;
-	width: auto;	
+	width: auto;
 }
 
 .tm-navbar { float: right; }
@@ -153,7 +153,7 @@ button:focus { outline: none; }
 .cd-slider-nav .nav-link:hover,
 .cd-slider-nav .nav-link:focus {
 	background-color: #1a2d4b;
-	color: white;	
+	color: white;
 }
 
 /* Hero Slider */
@@ -170,9 +170,9 @@ button:focus { outline: none; }
 .cd-hero-slider .tm-bg-white p,
 .cd-hero-slider .tm-bg-white h2 { color: black; }
 
-.cd-hero-slider .tm-text { 
+.cd-hero-slider .tm-text {
 	font-size: 1em;
-	line-height: 1.8; 
+	line-height: 1.8;
 }
 
 .tm-home-container {
@@ -194,8 +194,8 @@ button:focus { outline: none; }
 }
 
 .tm-bg-dark-blue { background-color: #1A2D4B; }
-.tm-bg-white { 
-	background-color: white; 
+.tm-bg-white {
+	background-color: white;
 	color: black;
 }
 .tm-bg-brown { background-color: #856729; }
@@ -220,7 +220,7 @@ button:focus { outline: none; }
     margin: 0 auto;
 }
 
-.cd-hero-slider h2.tm-text-title {	
+.cd-hero-slider h2.tm-text-title {
     font-size: 1.6em;
     font-weight: 400;
 }
@@ -247,8 +247,8 @@ button:focus { outline: none; }
 
 /* Gallery */
 .cd-hero-slider h2.tm-margin-b-0 { margin-bottom: 0; }
-.tm-gallery-title-container { 
-	position: relative; 
+.tm-gallery-title-container {
+	position: relative;
 	padding-left: 10px;
 	padding-right: 10px;
 }
@@ -266,7 +266,7 @@ button:focus { outline: none; }
 .tm-footer {
 	position: absolute;
 	bottom: 0;
-	left: 0;	
+	left: 0;
 }
 
 .tm-footer {
@@ -331,7 +331,7 @@ button:focus { outline: none; }
 
 textarea { height: 168px; }
 
-/* Preloader 
+/* Preloader
 	https://ihatetomatoes.net/create-custom-preloading-screen/
 */
 /* ==========================================================================
@@ -360,22 +360,22 @@ border-top-color: #f9c922; /* Chrome, Opera 15+, Safari 5+ */ animation: spin 1.
 
 /* Loaded */
 .loaded #loader-wrapper .loader-section.section-left {  /* Chrome, Opera 15+, Safari 3.1+ */  /* IE 9 */
-	transform: translateX(-100%);  /* Firefox 16+, IE 10+, Opera */  
+	transform: translateX(-100%);  /* Firefox 16+, IE 10+, Opera */
 	transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
 
 .loaded #loader-wrapper .loader-section.section-right {  /* Chrome, Opera 15+, Safari 3.1+ */  /* IE 9 */
-	transform: translateX(100%);  /* Firefox 16+, IE 10+, Opera */  
+	transform: translateX(100%);  /* Firefox 16+, IE 10+, Opera */
 	transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
 
 .loaded #loader {
-	opacity: 0;  
+	opacity: 0;
 	transition: all 0.3s ease-out;
 }
 .loaded #loader-wrapper {
 	visibility: hidden;  /* Chrome, Opera 15+, Safari 3.1+ */  /* IE 9 */
-	transform: translateY(-100%);  /* Firefox 16+, IE 10+, Opera */  
+	transform: translateY(-100%);  /* Firefox 16+, IE 10+, Opera */
 	transition: all 0.3s 1s ease-out;
 }
 
@@ -393,7 +393,7 @@ border-top-color: #f9c922; /* Chrome, Opera 15+, Safari 5+ */ animation: spin 1.
 
 .cd-slider-nav .navbar-nav { background-color: #455471; }
 
-.cd-slider-nav a, 
+.cd-slider-nav a,
 .navbar-nav .nav-link { height: 50px; }
 
 .cd-hero-slider .cd-full-width { text-align: left; }
@@ -407,9 +407,9 @@ border-top-color: #f9c922; /* Chrome, Opera 15+, Safari 5+ */ animation: spin 1.
 .tm-2-col-textbox-2 {
 	width: 100%;
 	padding: 25px;
-	margin-bottom: 30px; 
-	-ms-flex: 0 1 auto; 
-	    flex: 0 1 auto; 
+	margin-bottom: 30px;
+	-ms-flex: 0 1 auto;
+	    flex: 0 1 auto;
 	        /* Fix flexbox in IE 10 bug https://philipwalton.com/articles/normalizing-cross-browser-flexbox-bugs/ */
 }
 
@@ -476,7 +476,7 @@ border-top-color: #f9c922; /* Chrome, Opera 15+, Safari 5+ */ animation: spin 1.
 	.cd-hero-slider h2.tm-text-title-small { font-size: 1.6em; }
 	.tm-textbox-padding { padding: 30px 40px; }
 	.tm-textbox-padding-contact { padding: 30px; }
-		
+
 	.grid-item {
 		padding-left: 10px;
 		padding-right: 10px;
@@ -494,10 +494,10 @@ border-top-color: #f9c922; /* Chrome, Opera 15+, Safari 5+ */ animation: spin 1.
 }
 
 @media only screen and (min-width: 720px) {
-	
-	.tm-footer { 
-		-ms-flex-direction: row; 
-			flex-direction: row; 
+
+	.tm-footer {
+		-ms-flex-direction: row;
+			flex-direction: row;
 	}
 
 	.tm-copyright-text { margin-top: 0; }
@@ -515,21 +515,21 @@ border-top-color: #f9c922; /* Chrome, Opera 15+, Safari 5+ */ animation: spin 1.
 	.cd-hero-slider .cd-full-width { padding-top: 0; }
 	.tm-2-col-left { padding-right: 25px; }
 
-	.tm-2-col-right { 
-		padding-left: 25px; 
+	.tm-2-col-right {
+		padding-left: 25px;
 		padding-top: 0;
 	}
 
-	.tm-flex { 
-		display: -ms-flexbox; 
-		display: -webkit-box; 
+	.tm-flex {
+		display: -ms-flexbox;
+		display: -webkit-box;
 		display: flex;
 		-ms-flex-pack: center;
 		    -webkit-box-pack: center;
 		        justify-content: center;
 	}
 
-	.tm-2-col-textbox-2 {	
+	.tm-2-col-textbox-2 {
 		margin-bottom: 0;
 		margin-right: 30px;
 		width: 100%;
@@ -550,14 +550,14 @@ border-top-color: #f9c922; /* Chrome, Opera 15+, Safari 5+ */ animation: spin 1.
 
 	.cd-slider-nav a.navbar-brand { font-size: 3.5rem; }
 
-	.tm-navbar-bg { 
-		padding-left: 25px; 
+	.tm-navbar-bg {
+		padding-left: 25px;
 		padding-right: 0;
 	}
 
 	.tm-navbar {
 		position: static;
-		height: auto !important;		
+		height: auto !important;
 	}
 
 	.cd-slider-nav .navbar-nav {
@@ -566,13 +566,13 @@ border-top-color: #f9c922; /* Chrome, Opera 15+, Safari 5+ */ animation: spin 1.
 		display: flex;
 	}
 
-	.cd-slider-nav li {	
-		display: inline-block; 
+	.cd-slider-nav li {
+		display: inline-block;
 		width: auto;
 		height: auto;
 	}
 
-	.cd-slider-nav a, 
+	.cd-slider-nav a,
 	.navbar-nav .nav-link {
 		height: 80px;
 	}
@@ -590,13 +590,13 @@ border-top-color: #f9c922; /* Chrome, Opera 15+, Safari 5+ */ animation: spin 1.
 }
 
 @media only screen and (min-width: 1170px) {
-	
+
 	.cd-hero-slider h2 { margin-bottom: 0; }
 	.cd-hero-slider h2.tm-header-margin-b { margin-bottom: 20px; }
-	.cd-hero-slider p { margin-bottom: 30px; }	
+	.cd-hero-slider p { margin-bottom: 30px; }
 	.cd-hero-slider p:last-child { margin-bottom: 0; }
 	.cd-hero-slider .cd-full-width { padding-top: 0; }
-	.cd-hero-slider .tm-text { font-size: 1.1em; }	
+	.cd-hero-slider .tm-text { font-size: 1.1em; }
 }
 
 @media only screen and (min-width: 1333px) {
@@ -610,12 +610,12 @@ border-top-color: #f9c922; /* Chrome, Opera 15+, Safari 5+ */ animation: spin 1.
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-	.tm-2-col-textbox-2 { margin-right: 15px; }	
+	.tm-2-col-textbox-2 { margin-right: 15px; }
 }
 
 @media only screen and (max-width: 800px) {
-  .cd-bg-video-wrapper { 
-  	background: url('../img/bangkok-city.jpg') #000 no-repeat center center fixed; 
+  .cd-bg-video-wrapper {
+  	background: url('../img/bangkok-city.jpg') #000 no-repeat center center fixed;
   	background-size: cover;
   }
   .cd-bg-video-wrapper video { display: none; }
@@ -623,8 +623,8 @@ border-top-color: #f9c922; /* Chrome, Opera 15+, Safari 5+ */ animation: spin 1.
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
      /* IE10+ CSS styles go here */
-     .cd-bg-video-wrapper { 
-	  	background: url('../img/bangkok-city.jpg') #000 no-repeat center center scroll; 
+     .cd-bg-video-wrapper {
+	  	background: url('../img/bangkok-city.jpg') #000 no-repeat center center scroll;
 	  	background-size: cover;
 	  }
 	  .cd-bg-video-wrapper video { display: none; }

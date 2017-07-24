@@ -136,9 +136,10 @@ input#create-category-button:hover {
 
 #favourite-button {
   color: black;
-  width: 150px;
+  width: 140px;
   height: 26px;
   font-size: 12px;
+  margin-left: 33px;
   border: 0 2px;
   border-radius: 7px;
   background-color: white;
@@ -201,7 +202,7 @@ input {
   }
 }
 .fa-stack.fa-lg {
-  padding-right: 7.7em;
+  padding-right: 5em;
 }
 
 .login-username, .login-password {
