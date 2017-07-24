@@ -23,7 +23,7 @@ router.get("/marker", (req, res) => {
   });
 
   router.post("/marker", (req, res) => {
-    if(req.session.user_id && req.body.title && req.body.description && req.body.category.slice(12)) {
+    if(req.session.user_id && req.body.title && req.body.category.slice(12)) {
       knex("markers").insert({
             users_id: req.session.user_id,
             categories_id: req.body.category.slice(12),
@@ -49,16 +49,18 @@ router.get("/marker", (req, res) => {
   });
 
   router.post("/deletemarker", (req, res) => {
-    if (req.body.id) {
-      knex("markers").where('id', req.body.id).del()
-      .then((marker) => {
-        req.flash("info", "Marker deleted!");
-        res.redirect(`/?categories=${req.body.category}`);
-      }).catch((error) => {
-        res.sendStatus(500);
-      });
-    } else {
-      res.redirect(`/${req.body.category}`);
+    if(req.session.user_id) {
+      if (req.body.id) {
+        knex("markers").where('id', req.body.id).del()
+        .then((marker) => {
+          req.flash("info", "Marker deleted!");
+          res.redirect(`/?categories=${req.body.category}`);
+        }).catch((error) => {
+          res.sendStatus(500);
+        });
+      } else {
+        res.redirect(`/${req.body.category}`);
+      }
     }
   });
   return router;

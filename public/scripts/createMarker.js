@@ -23,10 +23,8 @@ $(() => {
 
         var popUpContent = `
         <div id="${markers[marker].id}">
-            <p>${markers[marker].id}</p>
             <h3>${markers[marker].title}</h3>
             <p>${markers[marker].description}</p>
-            <p>category: ${markers[marker].categories_id}</p>
             <form method="POST" action="/deletemarker" id="delete-marker">
               <input type="hidden" name="lat" value=${markers[marker].lat} />
               <input type="hidden" name="category" value=${markers[marker].categories_id} />
@@ -74,7 +72,7 @@ $(() => {
         <input type="hidden" name="lat" value=${marker.getPosition().lat()} />
         <input type="hidden" name="long" value=${marker.getPosition().lng()} />
         <input type="hidden" name="category" value=${window.location.search || ''} />
-        <input type="submit" value="Post" name="Submit" />
+        <input type="submit" value="Save pin" name="Submit" />
       </form>
       <form method="POST" action="/deletemarker" id="delete-marker">
         <input type="hidden" name="lat" value=${marker.getPosition().lat()} />
