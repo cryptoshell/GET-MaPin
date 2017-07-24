@@ -195,17 +195,18 @@ $(() => {
    const popUpContent = `
     <div id="content">
       <form method="POST" action="/marker" id="new-marker">
-        <textarea name="title" placeholder="eg. my fave spot"></textarea>
-        <textarea name="description" placeholder="Description"></textarea>
+        <textarea id="popup-title" name="title" placeholder="Enter a title"></textarea>
+        <br/>
+        <textarea id="popup-description" name="description" placeholder="Enter a description"></textarea>
         <input type="hidden" name="lat" value=${marker.getPosition().lat()} />
         <input type="hidden" name="long" value=${marker.getPosition().lng()} />
         <input type="hidden" name="category" value=${window.location.search || ''} />
-        <input type="submit" value="Save pin" name="Submit" />
+        <input id="submit-marker-button" type="submit" value="Save pin" name="Submit" />
       </form>
       <form method="POST" action="/deletemarker" id="delete-marker">
         <input type="hidden" name="lat" value=${marker.getPosition().lat()} />
         <input type="hidden" name="category" value=${window.location.search || ''} />
-        <input type="submit" value="Delete" name="Delete" />
+        <input id="delete-marker-button" type="submit" value="Delete" name="Delete" />
       </form>
     </div>`;
 
