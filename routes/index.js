@@ -3,10 +3,10 @@
 const express = require("express");
 
 function createRouter(knex) {
-  const router  = express.Router();
+  const router = express.Router();
 
   router.get("/", (req, res) => {
-    knex('categories').select('id','name').then((resultArray) => {
+    knex('categories').select('id', 'name').then((resultArray) => {
       let listsOfResults = {};
       resultArray.forEach((row) => {
         listsOfResults[row.id] = row.name;

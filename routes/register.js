@@ -3,10 +3,10 @@
 const express = require("express");
 
 function createRouter(knex, bcrypt) {
-  const router  = express.Router();
+  const router = express.Router();
 
   router.get("/", (req, res) => {
-    let templateVars = {user: req.session.user_id};
+    let templateVars = { user: req.session.user_id };
     res.render("register", templateVars);
   });
 
@@ -21,7 +21,7 @@ function createRouter(knex, bcrypt) {
 
     const matchProvidedEmail = knex("users")
       .select(1)
-      .where({email: req.body.email})
+      .where({ email: req.body.email })
       .limit(1);
     matchProvidedEmail.then((rows) => {
       console.log(rows);
@@ -40,9 +40,9 @@ function createRouter(knex, bcrypt) {
       });
     }).then(() => {
       return knex("users")
-      .select("id")
-      .where({email: req.body.email})
-      .limit(1);
+        .select("id")
+        .where({ email: req.body.email })
+        .limit(1);
     }).then((rows) => {
       req.session.user_id = rows[0].id;
       req.flash("info", "Account created successfully");

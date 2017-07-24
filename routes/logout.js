@@ -3,7 +3,7 @@
 const express = require("express");
 
 function createRouter(knex) {
-  const router  = express.Router();
+  const router = express.Router();
 
   router.get("/logout", (req, res) => {
     res.redirect("/");

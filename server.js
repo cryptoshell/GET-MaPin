@@ -2,39 +2,32 @@
 
 require('dotenv').config();
 
-const PORT          = process.env.PORT || 8080;
-const ENV           = process.env.ENV || "development";
-const express       = require("express");
-const bodyParser    = require("body-parser");
-const sass          = require("node-sass-middleware");
-const app           = express();
+const PORT = process.env.PORT || 8080;
+const ENV = process.env.ENV || "development";
+const express = require("express");
+const bodyParser = require("body-parser");
+const sass = require("node-sass-middleware");
+const app = express();
 const cookieSession = require("cookie-session");
-const flash         = require("connect-flash");
+const flash = require("connect-flash");
 
-const knexConfig  = require("./knexfile");
-const knex        = require("knex")(knexConfig[ENV]);
-const morgan      = require("morgan");
-const knexLogger  = require("knex-logger");
-const bcrypt      = require("bcryptjs");
+const knexConfig = require("./knexfile");
+const knex = require("knex")(knexConfig[ENV]);
+const morgan = require("morgan");
+const knexLogger = require("knex-logger");
+const bcrypt = require("bcryptjs");
 
-// Seperated Routes for each Resource - - wrap routes in factory function. the pattern below imply returning the same kind of thing, but currently are not
-const usersRoutes       = require("./routes/users")(knex);
-const registerRoutes    = require("./routes/register")(knex, bcrypt);
-const loginRoutes       = require("./routes/login")(knex, bcrypt);
-const indexRoutes       = require("./routes/index")(knex);
-const categoriesRoutes  = require("./routes/categories")(knex);
-const logoutRoutes      = require("./routes/logout")(knex);
-const markerRoutes      = require("./routes/marker")(knex);
-const favouritesRoutes  = require("./routes/favourites")(knex);
+// Factory functions
+const usersRoutes = require("./routes/users")(knex);
+const registerRoutes = require("./routes/register")(knex, bcrypt);
+const loginRoutes = require("./routes/login")(knex, bcrypt);
+const indexRoutes = require("./routes/index")(knex);
+const categoriesRoutes = require("./routes/categories")(knex);
+const logoutRoutes = require("./routes/logout")(knex);
+const markerRoutes = require("./routes/marker")(knex);
+const favouritesRoutes = require("./routes/favourites")(knex);
 
-
-// Load the logger first so all (static) HTTP requests are logged to STDOUT
-// 'dev' = Concise output colored by response status for development use.
-//         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
 app.use(morgan("dev"));
-
-// Log knex SQL queries to STDOUT as well
-// app.use(knexLogger(knex));
 
 app.set("view engine", "ejs");
 
@@ -61,28 +54,20 @@ app.use((req, res, next) => {
   next();
 });
 
-// Index page
 app.use(indexRoutes);
 
-// Register page
 app.use("/register", registerRoutes);
 
-// Login page
 app.use("/login", loginRoutes);
 
-// Logout
 app.use(logoutRoutes);
 
-// User page page
 app.use(usersRoutes);
 
-// Categories page
 app.use("/categories", categoriesRoutes);
 
-// Favourites page
 app.use("/favourites", favouritesRoutes);
 
-// Marker
 app.use(markerRoutes);
 
 app.listen(PORT, () => {
