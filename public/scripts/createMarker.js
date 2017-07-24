@@ -5,7 +5,135 @@ $(() => {
     const location = { lat: 49.2827, lng: -123.1188 };
     const map = new google.maps.Map(document.getElementById('map'), {
       zoom: 14,
-      center: location
+      center: location,
+      styles: [
+          {
+              "featureType": "administrative",
+              "elementType": "labels.text.fill",
+              "stylers": [
+                  {
+                      "color": "#444444"
+                  }
+              ]
+          },
+          {
+              "featureType": "administrative.country",
+              "elementType": "labels.text",
+              "stylers": [
+                  {
+                      "saturation": "18"
+                  },
+                  {
+                      "lightness": "-55"
+                  },
+                  {
+                      "visibility": "simplified"
+                  },
+                  {
+                      "color": "#4484a1"
+                  }
+              ]
+          },
+          {
+              "featureType": "landscape",
+              "elementType": "all",
+              "stylers": [
+                  {
+                      "color": "#bfc1c9"
+                  },
+                  {
+                      "saturation": "28"
+                  },
+                  {
+                      "lightness": "42"
+                  },
+                  {
+                      "gamma": "2.01"
+                  },
+                  {
+                      "weight": "1"
+                  }
+              ]
+          },
+          {
+              "featureType": "landscape.natural.terrain",
+              "elementType": "geometry.fill",
+              "stylers": [
+                  {
+                      "color": "#ebdeca"
+                  }
+              ]
+          },
+          {
+              "featureType": "poi",
+              "elementType": "all",
+              "stylers": [
+                  {
+                      "visibility": "off"
+                  }
+              ]
+          },
+          {
+              "featureType": "road",
+              "elementType": "all",
+              "stylers": [
+                  {
+                      "saturation": -100
+                  },
+                  {
+                      "lightness": 45
+                  }
+              ]
+          },
+          {
+              "featureType": "road.highway",
+              "elementType": "all",
+              "stylers": [
+                  {
+                      "visibility": "simplified"
+                  }
+              ]
+          },
+          {
+              "featureType": "road.highway",
+              "elementType": "geometry.fill",
+              "stylers": [
+                  {
+                      "color": "#daad63"
+                  }
+              ]
+          },
+          {
+              "featureType": "road.arterial",
+              "elementType": "labels.icon",
+              "stylers": [
+                  {
+                      "visibility": "off"
+                  }
+              ]
+          },
+          {
+              "featureType": "transit",
+              "elementType": "all",
+              "stylers": [
+                  {
+                      "visibility": "off"
+                  }
+              ]
+          },
+          {
+              "featureType": "water",
+              "elementType": "all",
+              "stylers": [
+                  {
+                      "visibility": "on"
+                  },
+                  {
+                      "color": "#223b6d"
+                  }
+              ]
+          }
+      ]
     });
 
     const searchQuery = window.location.search || '';

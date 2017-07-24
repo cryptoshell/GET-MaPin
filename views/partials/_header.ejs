@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 	<html lang="en">
 	<head>
+		<!-- Navbar stylesheet     -->
+		<link rel="stylesheet" href="/css/navbar.css" type="text/css" />
 	</head>
-	<!-- Navbar stylesheet     -->
-	<link rel="stylesheet" href="/styles/navbar.css" type="text/css" />
-	<!-- Bootstrap stylesheet -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
 	<header>
 
 		<nav class="navbar navbar-fixed-top">
@@ -15,32 +12,31 @@
 					<!-- <%= user.name %> -->
 					<div class="container">
 					 <ul class="nav navbar-nav">
-						<li><a id="navlinks" href="/"> HOME </a></li>
-						<li><a id="navlinks" href="/users"> PROFILE </a></li>
-						<li><form method="POST" action="/logout">
+						<a id="navlinks" href="/"> HOME </a>
+						<a id="navlinks" href="/users"> PROFILE </a>
+						<form method="POST" action="/logout">
 							<input id="logout" type="submit" value="LOGOUT" />
-						</form></li>
+						</form>
 					 </ul>
 				<% } else { %>
 					<div class="container">
 					 <ul class="nav navbar-nav">
-					 	<li><a id="navlinks" href="/"> HOME </a></li>
-						<li><a id="navlinks" href="/register"> REGISTER </a></li>
-
+					 	<a id="navlinks" href="/"> HOME </a>
+						<a id="navlinks" href="/register"> REGISTER </a>
 						<!-- NAVBAR LOGIN DROP DOWN: -->
 						<!-- <ul class="nav pull-right">
 							<li class="dropdown" id="menuLogin">
 								<a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">Login</a>
 								<div class="dropdown-menu" style="padding:17px;">
-									<form class="form" id="formLogin"> 
-										<input name="username" id="username" type="text" placeholder="Username"> 
+									<form class="form" id="formLogin">
+										<input name="username" id="username" type="text" placeholder="Username">
 										<input name="password" id="password" type="password" placeholder="Password"><br>
 										<button type="button" id="btnLogin" class="btn">Login</button>
 									</form>
 								</div>
 							</li>
 						</ul> -->
-						 <li><a id="navlinks" href="/login"> LOG IN </a></li> 
+						 <a id="navlinks" href="/login"> LOG IN </a>
 					 </ul>
 					</div>
 				<% } %>
