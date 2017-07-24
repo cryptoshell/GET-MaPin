@@ -6,8 +6,8 @@
   z-index: -1000;
 }
 
-#select-form {
-  float:right;
+category-scroll {
+  width:5em;
 }
 #new-category{
   float: right;
