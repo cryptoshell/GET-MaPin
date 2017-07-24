@@ -2,6 +2,9 @@
 body {
   margin: 0;
 }
+.fa.fa-map-marker{
+  padding-left: 1.8em;
+}
 
 .navbar {
   color: white;
@@ -61,5 +64,12 @@ a#logo.navbar-brand {
   background: black;
   font-size: 30x;
   margin: 0;
-  
+
+}
+
+#footer {
+  background-color: black;
+  color: white;
+  position: fixed;
+  bottom:0;
 }
