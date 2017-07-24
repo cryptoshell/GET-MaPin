@@ -151,7 +151,7 @@ input#create-category-button:hover {
   background-color: peru;
 }
 
-#errors-infos {
+.errors-infos {
   color: white;
   margin-top: 6px;
   margin-left: 20px;

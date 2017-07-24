@@ -183,16 +183,18 @@ http://www.tooplate.com/view/2088-big-city
         <%}%>
       </h1>
 
-        <% if (errors.length) { %>
-          <% errors.forEach(error => { %>
-            Error: <%= error %>
-          <% }) %>
-        <% } %>
-        <% if (info.length) { %>
-          <% info.forEach(message => { %>
-            <%= message %>
-          <% }) %>
-        <% } %>
+        <div class="errors-infos">
+            <% if (errors.length) { %>
+              <% errors.forEach(error => { %>
+                Error: <%= error %>
+              <% }) %>
+            <% } %>
+            <% if (info.length) { %>
+              <% info.forEach(message => { %>
+                <%= message %>
+              <% }) %>
+            <% } %>
+        </div>
 
           <section class="w3-container">
             <h2 id="my-favourites">

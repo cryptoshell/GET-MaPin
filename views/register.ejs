@@ -177,17 +177,19 @@ http://www.tooplate.com/view/2088-big-city
             });
 
         </script>
-        <% include partials/_header %>
-          <% if (errors.length) { %>
-          <% errors.forEach(error => { %>
-            Error: <%= error %>
-          <% }) %>
-        <% } %>
-        <% if (info.length) { %>
-          <% info.forEach(message => { %>
-            <%= message %>
-          <% }) %>
-        <% } %>
+        <div class="errors-infos">
+            <% include partials/_header %>
+              <% if (errors.length) { %>
+              <% errors.forEach(error => { %>
+                Error: <%= error %>
+              <% }) %>
+            <% } %>
+            <% if (info.length) { %>
+              <% info.forEach(message => { %>
+                <%= message %>
+              <% }) %>
+            <% } %>
+        <div>
 
       <form class="login-form" method="POST" action="/register" >
         <p class="login-text">
