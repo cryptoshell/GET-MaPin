@@ -117,23 +117,21 @@ h1#welcome-user {
 h2#my-favourites {
   color: peru;
   padding: 20px 50px;
+  text-align: center;
   text-shadow: 3px 3px black;
 }
 
-.w3-container ul {
-  padding: 0 50px;
+li#fav-list {
+  width: 350px;
+  margin: auto;
+  text-align: center;
 }
 
 #fav-list a {
   color: white;
-  padding: 0 50px;
-  font-size: 25px;
-  padding-left: 50%;
 }
 
 #fav-list a:hover {
   color: black;
-  padding: 0 50px;
   font-size: 25px;
-  padding-left: 50%;
 }
