@@ -193,15 +193,28 @@ http://www.tooplate.com/view/2088-big-city
             <%= message %>
           <% }) %>
         <% } %>
-        <section class="w3-container">
-          <h2 id="my-favourites">
-            My favourites:
-          </h2>
-          <ul class="w3-ul">
-            <% favourites.forEach((fav, index) => { %>
+
+          <section class="w3-container">
+            <h2 id="my-favourites">
+              My favourites:
+            </h2>
+            <% if (favourites) { %>
+            <ul class="w3-ul">
+              <% favourites.forEach((fav, index) => { %>
                 <li id="fav-list"class="w3-hover-orange"><a href="/?categories=<%=fav.id%>"><%= fav.name %></a></li>
+                <% }) %>
+              </ul>
+              <%}%>
+          <h3 id="my-contributions">
+            My contribution:
+          </h3>
+          <% if (contributions) { %>
+          <ul class="w3-ul">
+            <% contributions.forEach((contri, index) => { %>
+              <li id="contri-list"class="w3-hover-orange"><a href="/?categories=<%=contri.categories_id%>"><%= contri.name %></a></li>
             <% }) %>
           </ul>
+          <%}%>
         </section>
         <div class="underlay-black"></div>
     </body>

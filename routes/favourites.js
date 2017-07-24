@@ -17,14 +17,15 @@ function createRouter(knex) {
               type: 409,
               message: `${req.body.favourites} Favourite already exists`
             });
-          } else {
+          }else {
             knex("favourites").insert({
               users_id: req.session.user_id,
               categories_id: req.body.favourite
             }).then((favourites) => {
               res.redirect(`/?categories=${req.body.favourite}`);
             }).catch((error) => {
-              res.sendStatus(500);
+              req.flash('errors', err.message);
+              res.redirect("/")
             });
           }
         })
