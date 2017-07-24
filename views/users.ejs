@@ -14,6 +14,8 @@ http://www.tooplate.com/view/2088-big-city
 
 -->
     <!-- load stylesheets -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
     <!-- Google web font "Open Sans" -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -43,13 +45,9 @@ http://www.tooplate.com/view/2088-big-city
 
     <body>
 
-
-
         <div class="cd-bg-video-wrapper" data-video="video/bangkok-city">
             <!-- video element will be loaded using jQuery -->
         </div> <!-- .cd-bg-video-wrapper -->
-
-
 
         <!-- Preloader, https://ihatetomatoes.net/create-custom-preloading-screen/ -->
         <div id="loader-wrapper">
@@ -176,13 +174,14 @@ http://www.tooplate.com/view/2088-big-city
             });
 
         </script>
-      <h1>
+
+      <% include partials/_header %>
+      <h1 id="welcome-user">
         Welcome
         <% if(user) { %>
           <%=name%>
         <%}%>
       </h1>
-        <% include partials/_header %>
         <% if (errors.length) { %>
           <% errors.forEach(error => { %>
             Error: <%= error %>
@@ -193,18 +192,17 @@ http://www.tooplate.com/view/2088-big-city
             <%= message %>
           <% }) %>
         <% } %>
-        <section class="favlist">
-          <h2>
+        <section class="w3-container">
+          <h2 id="my-favourites">
             My favourites:
           </h2>
-          <ul>
+          <ul class="w3-ul">
             <% favourites.forEach((fav, index) => { %>
-                <li>
-                  <a href="/?categories=<%=fav.id%>"><%= fav.name %></a></li>
+                <li id="fav-list"class="w3-hover-orange"><a href="/?categories=<%=fav.id%>"><%= fav.name %></a></li>
             <% }) %>
           </ul>
         </section>
-
+        <div class="underlay-black"></div>
     </body>
 
 </html>

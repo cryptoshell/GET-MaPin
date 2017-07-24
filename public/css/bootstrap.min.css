@@ -2,15 +2,114 @@
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 
 
-.cd-bg-video-wrapper{
+.cd-bg-video-wrapper {
   z-index: -1000;
 }
 
-form#select-from{
-  width: 200px;
+form#select-form {
+  width: 500px;
+  margin: 50px auto 0 auto;
 }
-#new-category{
-  float: right;
+
+input#categories-submit-button {
+  width: 90px;
+  height: 28px;
+  font-size: 15px;
+  border: 0 2px;
+  margin-left: 7px;
+  border-radius: 7px;
+  background-color: white;
+}
+
+input#categories-submit-button:hover {
+  cursor: pointer;
+  background-color: #ccc;
+}
+
+#selectcategories {
+  margin: 0 auto;
+  height: 35px;
+  width: 350px;
+  font-size: 20px;
+}
+
+#selectcategories:hover {
+  cursor: pointer;
+  background-color: #ccc;
+}
+
+
+.new-category {
+  margin: 0 auto;
+  font-size: 20px;
+  width: 500px;
+  border-color: 1px;
+}
+
+#categories {
+  height: 35px;
+  border-radius: 5px;
+  font-size: 20px;
+  width: 350px;
+  border-color: 1px;
+  margin-top: 10px;
+}
+
+input#create-category-button {
+  display: inline-block;
+  width: 90px;
+  color: black;
+  height: 25px;
+  font-size: 15px;
+  border: 2px;
+  margin-left: 7px;
+  border-radius: 7px;
+  background-color: white;
+}
+
+
+input#create-category-button:hover {
+  cursor: pointer;
+  background-color: #ccc;
+}
+
+#chosen-category h3 {
+  color: peru;
+  display: inline-block;
+  max-width: 500px;
+  float: left;
+  margin: 0 ;
+  padding-left: 47px;
+  padding-top: 20px;
+  padding-bottom: 0;
+  font-size: 30px;
+  text-shadow: 2px 2px black;
+}
+
+#post-favourites {
+  width: 500px;
+  display: inline-block;
+  padding-top: 30px;
+  padding-left: 10px;
+}
+
+#favourite-button {
+  color: black;
+  width: 150px;
+  height: 26px;
+  font-size: 12px;
+  border: 0 2px;
+  border-radius: 7px;
+  background-color: white;
+}
+
+#favourite-button:hover {
+  cursor: pointer;
+  background-color: peru;
+}
+
+#errors-infos {
+  color: white;
 }
 
 input {
@@ -40,19 +139,19 @@ input {
 .login-form {
   //background: #222;
   //box-shadow: 0 0 1rem rgba(0,0,0,0.3);
-  margin-top: 300px;
-  margin-left: 512.222px;
-  margin-right: 512.222px;
-  max-width: 50%;
-  padding: .5rem;
+  margin: 295px auto;
+  width: 500px;
+  height: 60px;
+  font-size: 20px;
+  size: 200%;
 }
 .login-text {
   //background: hsl(40,30,60);
   //border-bottom: .5rem solid white;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.4em;
   margin: 0 auto;
-  max-width: 50%;
+  max-width: 500px;
   padding: .5rem;
   text-align: center;
   //text-shadow: 1px -1px 0 rgba(0,0,0,0.3);
@@ -61,7 +160,7 @@ input {
   }
 }
 .fa-stack.fa-lg {
-  padding-right: 5.6em;
+  padding-right: 7.7em;
 }
 
 .login-username, .login-password {
@@ -70,8 +169,9 @@ input {
   border-bottom: 1px solid rgba(white, .5);
   color: white;
   display: block;
-  margin: 1rem;
-  padding: .5rem;
+  margin: 0.8em;
+  padding: 1em;
+  font-size: 13px;
   transition: 250ms background ease-in;
   width: calc(100% - 3rem);
   &:focus {
@@ -81,38 +181,27 @@ input {
   }
 }
 
-.login-forgot-pass {
-  //border-bottom: 1px solid white;
-  bottom: 0;
-  color: white;
-  cursor: pointer;
-  display: block;
-  font-size: 75%;
-  left: 0;
-  opacity: 0.6;
-  padding: .5rem;
-  position: absolute;
-  text-align: center;
-  //text-decoration: none;
-  width: 100%;
-  &:hover {
-    opacity: 1;
-  }
-}
 .login-submit {
   border: 1px solid white;
   background: transparent;
   color: white;
   display: block;
-  margin: 1rem auto;
+  font-size: 13px;
+  margin: 1em auto;
   min-width: 1px;
-  padding: .25rem;
+  padding: .7em;
   transition: 250ms background ease-in;
   &:hover, &:focus {
     background: white;
     color: black;
     transition: 250ms background ease-in;
   }
+}
+
+.login-submit:hover {
+  cursor: pointer;
+  color: black;
+  background-color: #eee;
 }
 
 [class*=underlay] {

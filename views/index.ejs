@@ -14,7 +14,7 @@ http://www.tooplate.com/view/2088-big-city
 
 -->
     <!-- load stylesheets -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bungee+Shade|Dawning+of+a+New+Day|Nothing+You+Could+Do|Open+Sans:300,400">
     <!-- Google web font "Open Sans" -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Bootstrap style -->
@@ -43,8 +43,6 @@ http://www.tooplate.com/view/2088-big-city
 </head>
 
     <body>
-
-
 
         <div class="cd-bg-video-wrapper" data-video="video/bangkok-city">
             <!-- video element will be loaded using jQuery -->
@@ -177,8 +175,10 @@ http://www.tooplate.com/view/2088-big-city
             });
 
         </script>
+
         <% include partials/_header %>
-        <h2 id="slogan">Get Mappin! Map It - Pin It - Share It</h2>
+
+        <div id="errors-infos">
         <% if (errors.length) { %>
           <% errors.forEach(error => { %>
             Error: <%= error %>
@@ -189,32 +189,41 @@ http://www.tooplate.com/view/2088-big-city
             <%= message %>
           <% }) %>
         <% } %>
-        <%if(user){%>
-        <form method="POST" action="/favourites" >
-          <input name= "favourite" id="favourite" type="hidden" value="<%=category%>" />
-          <button type="submit">favourite</button>
-        </form>
-        <%}%>
-        <%for(let list in lists){%>
-          <%if(list === category){%>
-            <h3>Selected category: <%=lists[list]%></h3>
-          <%}%>
-        <%}%>
+        </div>
+
         <form id='select-form' action="" method="GET">
           <select id='selectcategories' name="categories">
-            <option value="0">select a category!</option>
+            <option value="0">Select a category</option>
             <%for(let list in lists){%>
               <option value="<%=list%>"><%=lists[list]%></option>
             <%}%>
           </select>
-          <input type="submit">
+          <input type="submit" id="categories-submit-button" value="SUBMIT" />
         </form>
+
+
          <%if(user){%>
-          <form id="new-category" action="/categories/" method="POST">
-            <input id="categories" type="text" name="categories" placeholder="Enter new category">
-            <input type="submit" value="create">
+          <form class="new-category" action="/categories/" method="POST">
+            <input id="categories" type="text" name="categories" placeholder=" Enter new category">
+            <input type="submit" value="CREATE" name="create" id="create-category-button"/>
           </form>
           <%}%>
+
+        <div id="chosen-category">
+        <%for(let list in lists){%>
+          <%if(list === category){%>
+            <h3>SELECTED CATEGORY: <%=lists[list].toUpperCase()%></h3>
+          <%}%>
+        <%}%>
+        </div>
+
+        <%if(user){%>
+        <form method="POST" action="/favourites" id="post-favourites">
+          <input name= "favourite" id="favourite" type="hidden" value="<%=category%>" />
+          <button id="favourite-button" type="submit">ADD TO FAVOURITES</button>
+        </form>
+        <%}%>
+
         <div id="map"></div>
         <script type="text/javascript" src="/scripts/createMarker.js"></script>
         <script defer
@@ -222,7 +231,7 @@ http://www.tooplate.com/view/2088-big-city
         </script>
 
     <div class="footer">
-      <footer>mapPin&#169</footer>
+      <footer>GETmaPin&#169</footer>
     </div>
 </body>
 </html>

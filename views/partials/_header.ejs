@@ -7,24 +7,25 @@
 	<header>
 
 		<nav class="navbar navbar-fixed-top">
-	  	<a id="logo" class="navbar-brand" href="/">mapPin</a><i class="fa fa-map-marker fa-lg"></i>
+		<span id="get-logo">GET</span>
+	  	<a id="logo" class="navbar-brand" href="/">maPin</a><i class="fa fa-map-marker fa-lg"></i>
 			 <% if (user) { %>
 					<!-- <%= user.name %> -->
-					<div class="container">
-					 <ul class="nav navbar-nav">
+					<div class="loggedin-container">
+					 <div id="nav-loggedin">
 						<a id="navlinks" href="/"> HOME </a>
 						<a id="navlinks" href="/users"> PROFILE </a>
 						<form method="POST" action="/logout">
 							<input id="logout" type="submit" value="LOGOUT" />
 						</form>
-					 </ul>
+					 </div>
 				<% } else { %>
-					<div class="container">
-					 <ul class="nav navbar-nav">
+					<div class="loggedout-container">
+					 <div class="nav navbar-nav">
 					 	<a id="navlinks" href="/"> HOME </a>
 						<a id="navlinks" href="/register"> REGISTER </a>
 						<a id="navlinks" href="/login"> LOG IN </a>
-					 </ul>
+					 </div>
 					</div>
 				<% } %>
 					</div>
