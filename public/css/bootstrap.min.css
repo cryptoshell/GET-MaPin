@@ -68,6 +68,7 @@ input#categories-submit-button:hover {
 
 #selectcategories {
   margin: 0 auto;
+  margin-bottom: 25px;
   height: 35px;
   width: 350px;
   font-size: 20px;
