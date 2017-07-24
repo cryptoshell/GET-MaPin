@@ -20,20 +20,14 @@
     <link rel="stylesheet" href="css/tooplate-style.css">
     <!-- GoogleMap style -->
     <link rel="stylesheet" href="/css/googleMap.css" type="text/css" />
-    
-    <script>
-      $("#selectcategories").change(function() {
-        let action = $(this).val().serialize();
-        $("#select-form").attr('action',`/categories/${action}` );
-      });
-    </script>
+
 </head>
 
     <body>
 
 
 
-        <div class="cd-bg-video-wrapper" data-video="video/bangkok-city">       
+        <div class="cd-bg-video-wrapper" data-video="video/bangkok-city">
         </div>
 
         <!-- Preloader -->
@@ -44,11 +38,11 @@
         </div>
 
         <!-- load JS files -->
-        <script src="js/jquery-1.11.3.min.js"></script>         
-        <script src="js/tether.min.js"></script>                
-        <script src="js/isInViewport.min.js"></script>          
-        <script src="js/bootstrap.min.js"></script>             
-        <script src="js/hero-slider-main.js"></script>          
+        <script src="js/jquery-1.11.3.min.js"></script>
+        <script src="js/tether.min.js"></script>
+        <script src="js/isInViewport.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/hero-slider-main.js"></script>
         <script src="js/jquery.magnific-popup.min.js"></script>
 
         <script>
@@ -161,8 +155,8 @@
             });
 
         </script>
+        <% include partials/_header %>
         <div class="errors-infos">
-            <% include partials/_header %>
               <% if (errors.length) { %>
               <% errors.forEach(error => { %>
                 Error: <%= error %>
@@ -173,7 +167,7 @@
                 <%= message %>
               <% }) %>
 						<% } %>
-						
+
         <div>
       <form class="login-form" method="POST" action="/register" >
         <p class="login-text">
