@@ -193,5 +193,16 @@ http://www.tooplate.com/view/2088-big-city
               <%= message %>
             <% }) %>
           <% } %>
+          <section class="favlist">
+            <h2>
+              My favourites:
+            </h2>
+            <ul>
+              <% favourites.forEach((fav, index) => { %>
+                  <li>
+                    <a href="/?categories=<%=fav.id%>"><%= fav.name %></a></li>
+              <% }) %>
+            </ul>
+          </section>
 </body>
 </html>

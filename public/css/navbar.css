@@ -1,10 +1,11 @@
 
 body {
-  padding-top: 70px;
+  margin: 0;
 }
 
 .navbar {
-  background-color: white;
+  color: white;
+  background-color: black;
   height: 60px;
   border-color: #e7e7e7;
 }
@@ -17,7 +18,6 @@ ul.nav.navbar-nav {
   width: 20em;
   float: right;
   margin-left: 1em;
-  margin-top: 1em;
   text-decoration: none;
   background-color: transparent;
 }
@@ -29,7 +29,7 @@ div.container {
 }
 
 a#navlinks {
-  color: black;
+  color: white;
 }
 
 #navlinks:hover {
@@ -39,6 +39,7 @@ a#navlinks {
 }
 
 a#logo.navbar-brand {
+  color: white;
   font-family: sans-serif;
   width: 100px;
   float: left;
@@ -46,23 +47,19 @@ a#logo.navbar-brand {
   font-weight: 800;
   line-height: 1em;
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.7);
 }
 
 #logout {
-  background: none !important;
   color: black, .7;
   border: none;
-  padding: 0 !important;
   font: inherit;
   cursor: pointer;
   float: right;
-  margin-left: 1em;
-  margin-top: 1em;
 }
-
-h2 {
-  margin-top: 3.5em;
-  font-size: 15px;
-  padding: 10px 250px 0px 24px;
+#slogan{
+  color: white;
+  background: black;
+  font-size: 30x;
+  margin: 0;
+  
 }

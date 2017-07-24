@@ -26,7 +26,7 @@ http://www.tooplate.com/view/2088-big-city
     <!-- Tooplate style -->
     <link rel="stylesheet" href="/css/googleMap.css" type="text/css" />
     <!-- GoogleMap style -->
-    
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -178,6 +178,7 @@ http://www.tooplate.com/view/2088-big-city
 
         </script>
         <% include partials/_header %>
+        <h2 id="slogan">Get Mappin! Map It - Pin It - Share It</h2>
         <% if (errors.length) { %>
           <% errors.forEach(error => { %>
             Error: <%= error %>
@@ -209,9 +210,8 @@ http://www.tooplate.com/view/2088-big-city
           <input type="submit">
         </form>
          <%if(user){%>
-          <form action="/categories/" method="POST">
-            <label for="categories">New category:</label>
-            <input id="categories" type="text" name="categories">
+          <form id="new-category" action="/categories/" method="POST">
+            <input id="categories" type="text" name="categories" placeholder="Enter new category">
             <input type="submit" value="create">
           </form>
           <%}%>
