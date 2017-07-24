@@ -25,7 +25,6 @@ function createRouter(knex) {
         console.log(error)
       });
 
-
   });
   return router;
 }
