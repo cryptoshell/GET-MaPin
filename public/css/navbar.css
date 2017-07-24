@@ -135,3 +135,16 @@ li#fav-list {
   color: black;
   font-size: 25px;
 }
+h3#my-contributions{
+  color: peru;
+  padding: 20px 50px;
+  text-align: center;
+  text-shadow: 3px 3px black;
+}
+
+h3#my-contributions{{
+  color: peru;
+  padding: 20px 50px;
+  text-align: center;
+  text-shadow: 3px 3px black;
+}

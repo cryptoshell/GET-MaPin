@@ -211,7 +211,7 @@ http://www.tooplate.com/view/2088-big-city
           <% if (contributions) { %>
           <ul class="w3-ul">
             <% contributions.forEach((contri, index) => { %>
-              <li id="contri-list"class="w3-hover-orange"><a href="/?categories=<%=contri.categories_id%>"><%= contri.name %></a></li>
+              <li id="fav-list"class="w3-hover-orange"><a href="/?categories=<%=contri.categories_id%>"><%= contri.name %></a></li>
             <% }) %>
           </ul>
           <%}%>
