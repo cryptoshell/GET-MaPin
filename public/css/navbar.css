@@ -9,8 +9,7 @@ body {
 .navbar {
   color: white;
   background-color: black;
-  height: 60px;
-  border-color: #e7e7e7;
+  height: 52px;
 }
 
 #favourite {
@@ -18,38 +17,34 @@ body {
 }
 
 ul.nav.navbar-nav {
-  width: 20em;
+  padding-top: 1.2em;
+  width: 15em;
   float: right;
-  margin-left: 1em;
-  text-decoration: none;
-  background-color: transparent;
 }
 
 div.container {
-  margin-right: 3em;
   float: right;
   width: 10px;
 }
 
 a#navlinks {
   color: white;
+  margin-right: 1em;
 }
 
 #navlinks:hover {
-  text-decoration: none !important;
   background-color: transparent;
-  color: black;
+  color: peru;
 }
 
 a#logo.navbar-brand {
   color: white;
   font-family: sans-serif;
-  width: 100px;
+  width: 95px;
   float: left;
   font-size: 38px;
   font-weight: 800;
-  line-height: 1em;
-  text-decoration: none;
+  padding-top: 5px;
 }
 
 #logout {
@@ -59,16 +54,22 @@ a#logo.navbar-brand {
   cursor: pointer;
   float: right;
 }
+
 #slogan{
   color: white;
   background: black;
-  font-size: 30x;
+  height:2em;
+  font-size: 15px;
+  font-family: sans-serif;
+  font-weight: 800;
+  padding-left: 20px;
   margin: 0;
+  padding-top: 2px;
 
 }
 
-#footer {
-  background-color: black;
+.footer {
+  right: 5px;
   color: white;
   position: fixed;
   bottom:0;
