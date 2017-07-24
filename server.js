@@ -13,6 +13,7 @@ const flash         = require("connect-flash");
 
 const knexConfig  = require("./knexfile");
 const knex        = require("knex")(knexConfig[ENV]);
+const morgan      = require("morgan");
 const knexLogger  = require("knex-logger");
 const bcrypt      = require("bcryptjs");
 
@@ -26,6 +27,11 @@ const logoutRoutes      = require("./routes/logout")(knex);
 const markerRoutes      = require("./routes/marker")(knex);
 const favouritesRoutes  = require("./routes/favourites")(knex);
 
+
+// Load the logger first so all (static) HTTP requests are logged to STDOUT
+// 'dev' = Concise output colored by response status for development use.
+//         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
+app.use(morgan("dev"));
 
 // Log knex SQL queries to STDOUT as well
 // app.use(knexLogger(knex));
