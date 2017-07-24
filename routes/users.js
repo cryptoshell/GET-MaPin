@@ -10,7 +10,7 @@ function createRouter(knex) {
     const favouriteList = knex('favourites').select('*')
       .where('users_id', req.session.user_id)
       .join('categories', 'categories_id', '=', 'categories.id');
-    const contributionsList = knex('markers').distinct('name').select()
+    const contributionsList = knex('markers').distinct('name','categories_id').select()
       .where('users_id', req.session.user_id)
       .join('categories', 'categories_id', '=', 'categories.id');
 
