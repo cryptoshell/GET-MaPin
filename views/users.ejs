@@ -6,11 +6,7 @@
       <h1>
         Welcome
         <% if(user) { %>
-<<<<<<< HEAD
           <%=name%>
-=======
-          <%=name%>!
->>>>>>> 8e643c763d4dfdb2e41f3411d6e3b3d09617e9e5
         <%}%>
       </h1>
         <% include partials/_header %>
@@ -29,9 +25,10 @@
             My favourites:
           </h2>
           <ul>
-            <li> Fried Chicken </li>
-            <li> Cafe </li>
-            <li> Hairdresser </li>
+            <% favourites.forEach((fav, index) => { %>
+                <li>
+                  <a href="/?categories=<%=fav.id%>"><%= fav.name %></a></li>
+            <% }) %>
           </ul>
         </section>
 
