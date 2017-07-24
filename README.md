@@ -1,7 +1,7 @@
 # maPin
 maPin is a web-app that allows users to view, edit and share their stories and favourite spots with pins on a map.
 
-https://github.com/cryptoshell/WikiMap/blob/master/mapin7.PNG
+![index page](https://github.com/cryptoshell/WikiMap/blob/master/mapin7.PNG)
 
 ## Getting Started
 
@@ -15,15 +15,15 @@ https://github.com/cryptoshell/WikiMap/blob/master/mapin7.PNG
 
 If you are not yet a registered user, click 'register' in the top right corner and fill out the registration form:
 
-https://github.com/cryptoshell/WikiMap/blob/master/mapin3.PNG
+![register page](https://github.com/cryptoshell/WikiMap/blob/master/mapin3.PNG)
 
 Once you are registered og logged in you will be taken to the index page where you will be able to add and edit pins by clicking on the map:
 
-https://github.com/cryptoshell/WikiMap/blob/master/mapin4.PNG 
+![index](https://github.com/cryptoshell/WikiMap/blob/master/mapin4.PNG)
 
 By selecting a category and clicking 'favourite' you can add a category to your favourites list which is viewable on your profile page:
 
-https://github.com/cryptoshell/WikiMap/blob/master/mapin5.PNG
+![favourites](https://github.com/cryptoshell/WikiMap/blob/master/mapin5.PNG)
   
 ## Dependencies
 
