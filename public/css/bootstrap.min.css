@@ -40,7 +40,9 @@ input {
 .login-form {
   //background: #222;
   //box-shadow: 0 0 1rem rgba(0,0,0,0.3);
-  margin: auto;
+  margin-top: 300px;
+  margin-left: 512.222px;
+  margin-right: 512.222px;
   max-width: 50%;
   padding: .5rem;
 }
@@ -57,6 +59,9 @@ input {
   .fa-stack-1x {
     color: black;
   }
+}
+.fa-stack.fa-lg {
+  padding-right: 5.6em;
 }
 
 .login-username, .login-password {
