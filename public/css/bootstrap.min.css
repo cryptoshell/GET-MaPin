@@ -152,6 +152,8 @@ input#create-category-button:hover {
 
 #errors-infos {
   color: white;
+  margin-top: 6px;
+  margin-left: 20px;
 }
 
 input {

@@ -4,7 +4,7 @@ body {
 
 .fa.fa-map-marker{
   padding-left: 1.6em;
-  padding-top: 0.4em;
+  padding-top: 0.6em;
 }
 
 .fa.fa-map-marker:hover {
@@ -25,7 +25,7 @@ span#get-logo {
   position: absolute;
   font-size: 13px;
   left: 6px;
-  top: 6px;
+  top: 9px;
 }
 
 span#get-logo:hover {
@@ -76,7 +76,7 @@ a#logo.navbar-brand {
   float: left;
   font-size: 38px;
   font-weight: 800;
-  padding-top: 5px;
+  padding-top: 9.5px;
   padding-left: 20px;
 }
 
