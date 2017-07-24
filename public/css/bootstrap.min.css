@@ -36,15 +36,15 @@ input {
     }
   }
 }
-
-.login-form {
-  //background: #222;
-  //box-shadow: 0 0 1rem rgba(0,0,0,0.3);
-  margin-top: 300px;
-  margin-left: 512.222px;
-  margin-right: 512.222px;
-  max-width: 50%;
-  padding: .5rem;
+h1{
+  color: white;
+}
+.favlist{
+  height: 500px;
+  width: 500px;
+  margin-left: 800px;
+  margin-top: 100px;
+  color:white
 }
 .login-text {
   //background: hsl(40,30,60);

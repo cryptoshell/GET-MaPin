@@ -176,13 +176,13 @@ http://www.tooplate.com/view/2088-big-city
             });
 
         </script>
-      <h1>
-        Welcome
-        <% if(user) { %>
-          <%=name%>
-        <%}%>
-      </h1>
         <% include partials/_header %>
+        <h1>
+          Welcome
+          <% if(user) { %>
+            <%=name%>
+          <%}%>
+        </h1>
         <% if (errors.length) { %>
           <% errors.forEach(error => { %>
             Error: <%= error %>
@@ -204,7 +204,7 @@ http://www.tooplate.com/view/2088-big-city
             <% }) %>
           </ul>
         </section>
-
+        <div class="underlay-black"></div>
     </body>
 
 </html>
