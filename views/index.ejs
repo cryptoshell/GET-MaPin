@@ -200,17 +200,15 @@ http://www.tooplate.com/view/2088-big-city
             <h3>Selected category: <%=lists[list]%></h3>
           <%}%>
         <%}%>
-        <div id="category-scroll">
-            <form id='select-form' action="" method="GET">
-              <select id='selectcategories' name="categories">
-                <option value="0">select a category!</option>
-                <%for(let list in lists){%>
-                  <option value="<%=list%>"><%=lists[list]%></option>
-                <%}%>
-              </select>
-              <input type="submit">
-            </form>
-        </div>
+        <form id='select-form' action="" method="GET">
+          <select id='selectcategories' name="categories">
+            <option value="0">select a category!</option>
+            <%for(let list in lists){%>
+              <option value="<%=list%>"><%=lists[list]%></option>
+            <%}%>
+          </select>
+          <input type="submit">
+        </form>
          <%if(user){%>
           <form id="new-category" action="/categories/" method="POST">
             <input id="categories" type="text" name="categories" placeholder="Enter new category">
