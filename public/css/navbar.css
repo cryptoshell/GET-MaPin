@@ -12,8 +12,8 @@ body {
 }
 
 .navbar {
-  color: white;
   background-color: black;
+  color: white;
   height: 60px;
 }
 
@@ -22,9 +22,9 @@ body {
 }
 
 span#get-logo {
-  position: absolute;
   font-size: 13px;
   left: 6px;
+  position: absolute;
   top: 9px;
 }
 
@@ -34,15 +34,15 @@ span#get-logo:hover {
 
 
 div.nav.navbar-nav {
+  float: right;
   padding-top: 1em;
   width: 15em;
-  float: right;
 }
 
 div.loggedin-container {
   float: right;
-  width: 240px;
   margin-top: 20px;
+  width: 240px;
 }
 
 div.loggedout-container {
@@ -51,8 +51,8 @@ div.loggedout-container {
 }
 
 input#logout {
-  position: absolute;
   margin-top: 8px;
+  position: absolute;
   right: 7px;
 }
 
@@ -71,13 +71,13 @@ a#navlinks {
 
 a#logo.navbar-brand {
   color: white;
-  font-family: 'Nothing You Could Do';
-  width: 95px;
   float: left;
+  font-family: 'Nothing You Could Do';
   font-size: 38px;
   font-weight: 800;
   padding-top: 9.5px;
   padding-left: 20px;
+  width: 95px;
 }
 
 a#logo.navbar-brand:hover {
@@ -85,21 +85,21 @@ a#logo.navbar-brand:hover {
 }
 
 #logout {
-  color: black, .7;
   border: none;
-  font: inherit;
+  color: black, .7;
   cursor: pointer;
   float: right;
+  font: inherit;
 }
 
 .footer {
-  right: 5px;
-  color: white;
-  position: fixed;
   bottom:0;
+  color: white;
   font-family: 'Nothing You Could Do';
   padding-bottom: 4px;
   padding-right: 5px;
+  position: fixed;
+  right: 5px;
 }
 
 input#logout {
@@ -122,9 +122,9 @@ h2#my-favourites {
 }
 
 li#fav-list {
-  width: 350px;
   margin: auto;
   text-align: center;
+  width: 350px;
 }
 
 #fav-list a {
