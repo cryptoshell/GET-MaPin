@@ -16,7 +16,6 @@ function createRouter(knex) {
 
     Promise.all([user, favouriteList, contributionsList])
       .then((result) => {
-        console.log(result[2])
 
         let templateVars = {
           user: req.session.user_id,

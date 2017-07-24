@@ -27,8 +27,6 @@ function createRouter(knex, bcrypt) {
 
 		findUserByEmail.then((rows) => {
 			const user = rows[0];
-			// console.log(rows[0]); //undefined
-			// console.log(user); //undefined
 			if (!user) {
 				return Promise.reject({
 					type: 409,
