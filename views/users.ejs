@@ -176,36 +176,6 @@ http://www.tooplate.com/view/2088-big-city
             });
 
         </script>
-        <h1>
-          Welcome
-          <% if(user) { %>
-            <%=name%>!
-          <%}%>
-        </h1>
-          <% include partials/_header %>
-          <% if (errors.length) { %>
-            <% errors.forEach(error => { %>
-              Error: <%= error %>
-            <% }) %>
-          <% } %>
-          <% if (info.length) { %>
-            <% info.forEach(message => { %>
-              <%= message %>
-            <% }) %>
-          <% } %>
-          <section class="favlist">
-            <h2>
-              My favourites:
-            </h2>
-            <ul>
-              <% favourites.forEach((fav, index) => { %>
-                  <li>
-                    <a href="/?categories=<%=fav.id%>"><%= fav.name %></a></li>
-              <% }) %>
-            </ul>
-          </section>
-</body>
-
       <h1>
         Welcome
         <% if(user) { %>
