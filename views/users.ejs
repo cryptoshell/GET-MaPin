@@ -6,7 +6,7 @@
       <h1>
         Welcome to your page 
         <% if(user) { %>
-          <h2><%=name%><h2>
+          <%=name%>
         <%}%>
       </h1>
         <% include partials/_header %>
@@ -20,5 +20,16 @@
             <%= message %>
           <% }) %>
         <% } %>
+        <section class="favlist">
+          <h2>
+            My favourites:
+          </h2>
+          <ul>
+            <li> Fried Chicken </li>
+            <li> Cafe </li>
+            <li> Hairdresser </li>
+          </ul>
+        </section>
+
     </body>
 </html>
