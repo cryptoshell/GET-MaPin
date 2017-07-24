@@ -201,12 +201,13 @@ $(() => {
         <input type="hidden" name="lat" value=${marker.getPosition().lat()} />
         <input type="hidden" name="long" value=${marker.getPosition().lng()} />
         <input type="hidden" name="category" value=${window.location.search || ''} />
+        <br/>
         <input id="submit-marker-button" type="submit" value="Save pin" name="Submit" />
       </form>
       <form method="POST" action="/deletemarker" id="delete-marker">
         <input type="hidden" name="lat" value=${marker.getPosition().lat()} />
         <input type="hidden" name="category" value=${window.location.search || ''} />
-        <input id="delete-marker-button" type="submit" value="Delete" name="Delete" />
+        <input id="delete-marker-button" type="submit" value="Delete Pin" name="Delete" />
       </form>
     </div>`;
 
