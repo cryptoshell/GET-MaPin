@@ -26,7 +26,7 @@ Once you are registered or logged in you will be taken to the index page where y
 
 ![category](/docs/category-example.png)
 
-Example of marker and its pop-up:
+Example of a marker and its pop-up:
 
 ![marker's popup](/docs/marker-popup.png)
 
