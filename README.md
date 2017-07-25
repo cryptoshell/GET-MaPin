@@ -1,7 +1,7 @@
 # maPin
 maPin is a web-app that allows users to view, edit and share their stories and favourite spots with pins on a map.
 
-![index page](https://github.com/cryptoshell/WikiMap/blob/master/mapin7.PNG)
+![index page](/docs/mapin7.PNG)
 
 ## Getting Started
 
@@ -15,16 +15,16 @@ maPin is a web-app that allows users to view, edit and share their stories and f
 
 If you are not yet a registered user, click 'register' in the top right corner and fill out the registration form:
 
-![register page](https://github.com/cryptoshell/WikiMap/blob/master/mapin3.PNG)
+![register page](/docs/mapin3.PNG)
 
 Once you are registered or logged in you will be taken to the index page where you will be able to add and edit pins by clicking on the map:
 
-![index](https://github.com/cryptoshell/WikiMap/blob/master/mapin4.PNG)
+![index](/docs/mapin4.PNG)
 
 By selecting a category and clicking 'favourite' you can add a category to your favourites list which is viewable on your profile page:
 
-![favourites](https://github.com/cryptoshell/WikiMap/blob/master/mapin5.PNG)
-  
+![favourites](/docs/mapin5.PNG)
+
 ## Dependencies
 
 - Node 5.10.x or above
@@ -42,4 +42,4 @@ By selecting a category and clicking 'favourite' you can add a category to your 
 - mapbox-gl 0.38.0 or above
 - nodemon 1.11.0 or above
 - pg 7.0.1 or above
-  
+
