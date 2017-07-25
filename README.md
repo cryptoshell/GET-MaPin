@@ -1,6 +1,7 @@
 # maPin
 maPin is a web-app that allows users to view, edit and share their stories and favourite spots with pins on a map.
 
+
 ![index page](/docs/mapin7.PNG)
 
 ## Getting Started

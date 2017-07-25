@@ -5,10 +5,6 @@ const express = require("express");
 function createRouter(knex) {
   const router = express.Router();
 
-  // router.get("/", function (req, res) {
-  //     res.render("categories")
-  // });
-
   router.post("/", function (req, res) {
     const categoriesChecker = knex("categories")
       .select(1)
