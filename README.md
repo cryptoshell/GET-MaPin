@@ -2,7 +2,7 @@
 maPin is a web-app that allows users to view, edit and share their stories and favourite spots with pins on a map.
 
 
-![index page](/docs/mapin7.PNG)
+![index page](/docs/home.png)
 
 ## Getting Started
 
@@ -16,15 +16,23 @@ maPin is a web-app that allows users to view, edit and share their stories and f
 
 If you are not yet a registered user, click 'register' in the top right corner and fill out the registration form:
 
-![register page](/docs/mapin3.PNG)
+![register page](/docs/register.png)
+
+Or log in here:
+
+![login page](/docs/login.png)
 
 Once you are registered or logged in you will be taken to the index page where you will be able to add and edit pins by clicking on the map:
 
-![index](/docs/mapin4.PNG)
+![category](/docs/category-example.png)
+
+Example of marker and its pop-up:
+
+![marker's popup](/docs/marker-popup.png)
 
 By selecting a category and clicking 'favourite' you can add a category to your favourites list which is viewable on your profile page:
 
-![favourites](/docs/mapin5.PNG)
+![user's favourites](/docs/user-profile.png)
 
 ## Dependencies
 
