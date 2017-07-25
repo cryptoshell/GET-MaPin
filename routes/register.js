@@ -24,7 +24,6 @@ function createRouter(knex, bcrypt) {
       .where({ email: req.body.email })
       .limit(1);
     matchProvidedEmail.then((rows) => {
-      console.log(rows);
       if (rows.length) {
         return Promise.reject({
           type: 409,
