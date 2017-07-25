@@ -2,21 +2,21 @@
 <html lang="en">
   <head>
   </head>
-    <body>
-			<h1> You are logged out </h1>
-			<% include partials/_header %>
-      <div class="errors-infos">
-  			<% if (errors.length) { %>
-  				<% errors.forEach(error => { %>
-  					Error: <%= error %>
-  				<% }) %>
-  			<% } %>
-  			<% if (info.length) { %>
-  				<% info.forEach(message => { %>
-  					<%= message %>
-  				<% }) %>
-  			<% } %>
-      </div>
-			</form>
-    </body>
+  <body>
+		<h1> You are logged out </h1>
+		<% include partials/_header %>
+    <div class="errors-infos">
+			<% if (errors.length) { %>
+				<% errors.forEach(error => { %>
+					Error: <%= error %>
+				<% }) %>
+			<% } %>
+			<% if (info.length) { %>
+				<% info.forEach(message => { %>
+					<%= message %>
+				<% }) %>
+			<% } %>
+    </div>
+		</form>
+  </body>
 </html>
