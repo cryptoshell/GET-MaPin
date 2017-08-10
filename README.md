@@ -54,5 +54,5 @@ By selecting a category and clicking 'favourite' you can add a category to your 
 
 ## Contributors
 - Yelim Oh [cryptoshell]
-- Kai [kai19]
+- Kai Ng [kai19]
 - Nikolai Gauer [nikolaigauer]
