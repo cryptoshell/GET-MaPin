@@ -52,3 +52,7 @@ By selecting a category and clicking 'favourite' you can add a category to your 
 - nodemon 1.11.0 or above
 - pg 7.0.1 or above
 
+## Contributors
+- Yelim Oh [cryptoshell]
+- Kai [kai19]
+- Nikolai Gauer [nikolaigauer]
